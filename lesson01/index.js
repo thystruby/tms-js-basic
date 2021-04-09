@@ -12,7 +12,12 @@ console.log('Hello World!')
  * Создайте несколько переменных с разными типами данных: number, string, boolean, null, undefined
  * Выведите через запятую "типы" этих переменных в консоль
 */
-
+/*let a = 5;
+let b = 'hi';
+let c = true;
+let d = null;
+let e;
+console.log(typeof a, b, c, d, e)*/
 
 /**
  * Задание 2.
@@ -22,7 +27,9 @@ console.log('Hello World!')
  * Выводите в alert следующую строку "Активный администратор: [значение переменной admin]".
  * P.S. Надо использовать шаблонные строки ("обратные" ковычки)
 */
-
+/*const name = 'Jhon';
+const admin = name;
+alert(`Активный администратор: ${admin}`)*/
 
 /** 
  * Задание 3.
@@ -30,10 +37,19 @@ console.log('Hello World!')
  * С помощью метод prompt запросите у пользователя его имя. По умолчанию установить значение "Имя пользователя"
  * Выводите в alert строку типа "[константа] [значение, введенное в prompt]"
 */
-
+/*const text = 'Привет';
+const userName = prompt('Имя пользователя');
+alert(`${text} ${userName}`);*/
 
 /**
  * Задание 4.
  * Выведите confirm с текстом "Получить доступ?"
  * Выведите в alert значение, полученное из confirm 
 */
+// const access = confirm('Получить доступ?');
+// console.log(access);
+// if(access) {
+//     alert('ok')
+// }
+
+// alert(confirm('Получить доступ?'))
