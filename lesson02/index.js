@@ -11,7 +11,11 @@
  * Создайте несколько переменных со следующими значениями: 'some string', 1, true, null
  * Преобразуйте эти переменные в boolean, string, number с помощью явного преобразования (прим: Boolean()) и выведите значение в консоль.
 */
-
+/*let info = "some string";
+let one = 1;
+let lifeIsGood = true;
+let none = null; 
+console.log(Boolean(info), String(one), Number(lifeIsGood), Number(none))*/
 
 /**
  * Задание 2
@@ -24,7 +28,12 @@
   * Поместите результат каждого выражения в соответствующую переменную.
   * Вывести все результаты через запятую в console.log
 */
-
+let a1 = (5 + 3) * (5 - 3);
+let a2 = (10 - 6) * 200;
+let a3 = 534 * 132 / 18;
+let a4 = 123 * 3 + 10;
+let a5 = 12*13*14;
+console.log(a1+ "," + a2 + "," + a3 + "," + a4 + "," +a5);
 
 /**
  * Задание 3
