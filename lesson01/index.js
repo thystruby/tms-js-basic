@@ -17,7 +17,8 @@ const firstName = "Dmitriy";
 const isMen = true;
 const lastName = null;
 const nothing = undefined;
-console.log (age +","+ firstName + "," + isMen + "," + lastName + "," + nothing)
+console.log(typeof age +"," + typeof firstName + "," + isMen + "," + lastName + "," + nothing)
+
 
 /**
  * Задание 2.
@@ -27,7 +28,7 @@ console.log (age +","+ firstName + "," + isMen + "," + lastName + "," + nothing)
  * Выводите в alert следующую строку "Активный администратор: [значение переменной admin]".
  * P.S. Надо использовать шаблонные строки ("обратные" ковычки)
 */
-let admin = "";
+/*let admin = "";
 let name = "John";
 admin = name;
 
@@ -39,7 +40,7 @@ alert(`Активный администратор:  ${admin}`)
  * С помощью метод prompt запросите у пользователя его имя. По умолчанию установить значение "Имя пользователя"
  * Выводите в alert строку типа "[константа] [значение, введенное в prompt]"
 */
-const meeting= "Привет";
+/*const meeting= "Привет";
 const user = prompt("Имя пользователя");
 alert(meeting + " " + user)
 
@@ -49,9 +50,9 @@ alert(meeting + " " + user)
  * Выведите в alert значение, полученное из confirm 
 */
 
-const result = confirm("Получить доступ?");
+/*const result = confirm("Получить доступ?");
 if(result){
     alert("Доступ открыт!"); 
     } 
 else{
-    alert("Доступ закрыт!");} 
+    alert("Доступ закрыт!");} */
