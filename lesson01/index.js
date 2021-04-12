@@ -34,7 +34,7 @@ console.log( number, str, myCommit, a, b);
 
 /*
 let userName = "John";
-let admin = userName;
+const admin = userName;
 alert(`Активный администратор: ${admin}`);
 */
 
@@ -59,4 +59,4 @@ alert(`${hello}, ${userName}`);
  * Выведите в alert значение, полученное из confirm 
 */
 let myPass = confirm("Получить доступ");
-alert(`${myPass}`);
+alert(myPass);
