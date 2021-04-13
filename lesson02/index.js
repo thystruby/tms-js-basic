@@ -12,6 +12,18 @@
  * Преобразуйте эти переменные в boolean, string, number с помощью явного преобразования (прим: Boolean()) и выведите значение в консоль.
 */
 
+/*
+let text = "some string";
+let page = 1;
+let book = true;
+let bookCase = null;
+console.log(Boolean(text));
+console.log(String(page));
+console.log(Number(book));
+console.log(Boolean(bookCase));
+*/
+
+
 
 /**
  * Задание 2
@@ -25,11 +37,26 @@
   * Вывести все результаты через запятую в console.log
 */
 
+/*
+let a1 = (5 + 3) * (5 - 3);
+let a2 = (10 - 6) * 200;
+let a3 = 534 * 132 / 18;
+let a4 = 123 * 3 + 10
+let a5 = 12*13*14
+console.log(a1, a2, a3, a4, a5)
+*/
 
 /**
  * Задание 3
- * Напишите скрипт, который находит площадь прямоугольника c высота 43см и шириной 27см
+ * Напишите скрипт, кот.орый находит площадь прямоугольника c высота 43см и шириной 27см
  * Значение площади должно хранится в переменной s
+*/
+
+/*
+let a = 43;
+let b= 27;
+let s = a*b;
+console.log(s);
 */
 
 
@@ -38,6 +65,11 @@
  * Найдите гипотенузу k по теореме Пифагора.
 */
 
+/*let n =3;
+let m = 4;
+let k =(n**2 + m**2)**(1/2);
+console.log(k);
+*/
 
  /**
  * Задание 5
@@ -50,6 +82,14 @@
  * alert(num);
 */
 
+/*
+let num = 10;
+ num = ++num;
+ num = ++num;
+ num = --num;
+ alert(num);
+ */
+
 
 /** 
  * Задание 6
@@ -61,6 +101,26 @@
 */
 
 
+/*
+let result1 = prompt("напишите число");
+let result2 = prompt("напишите второе число");
+if (Number.isNaN(Number(result1)) || Number.isNaN(Number(result2))) { 
+  alert("Произошла ошибка");
+}
+else {
+if (result1 == result2) {
+   alert(`Числа равны: ${result1}, ${result2}`);
+} else if (result1 > result2) {
+  alert(result1);
+} else if (result2 > result1) {
+  alert(result2);
+} 
+}
+*/
+
+
+
+
 /**
  * Задание 7
  * Вызовите окно confirm с текстом "Хотите получить доступ?"
@@ -70,8 +130,28 @@
  * Используйте "тернарный оператор" (? :)
 */
 
+/*
+let access = confirm("Хотите получить доступ?");
+switch(access) {
+  case true:
+let age = prompt ("Ваш возраст");
+let access = (age >= 18) ? alert("Доступ разрешен") : alert("Доступ запрещен");
+}
+*/
+
+
+
 
 /**
  * Задание 8
  * Запросить у пользователя 2 значения. Найти остаток от деления 2-х чисел, вывести в alert. Надо так же сделать проверку на то, является ли введенное значение числом.
 */
+let result1 = prompt("напишите число");
+let result2 = prompt("напишите второе число");
+if (Number.isNaN(Number(result1)) || Number.isNaN(Number(result2))) { 
+  alert("Произошла ошибка");
+}
+else {
+  alert(result1 % result2)
+}
+
