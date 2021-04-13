@@ -12,7 +12,22 @@
  * Создайте несколько переменных с разными типами данных: number, string, boolean, null, undefined
  * Выведите через запятую "типы" этих переменных в консоль
 */
-123321
+
+// let n = 123;
+// let userName = "Egor";
+// let compare = 3 < 2;
+// let dayOfweek = null;
+// let day;
+
+// typeof 123, "Egor", 3 < 2, null, day;
+// alert(typeof (123)),  alert(typeof ("Egor")), alert(typeof (3 < 2)), alert(typeof (null)), alert(typeof (day));
+
+
+
+
+
+
+
 
 /**
  * Задание 2.
@@ -24,6 +39,11 @@
 */
 
 
+// let name = "John";
+// let admin = name;
+// alert(`Активный администратор: `+ admin)
+
+
 /** 
  * Задание 3.
  * Создайте константу с текстом "Привет"
@@ -31,9 +51,16 @@
  * Выводите в alert строку типа "[константа] [значение, введенное в prompt]"
 */
 
+// const hello = "Привет " 
+// let name = prompt("Имя пользователя");
+// alert(hello + name);
+
 
 /**
  * Задание 4.
  * Выведите confirm с текстом "Получить доступ?"
  * Выведите в alert значение, полученное из confirm 
 */
+
+// let logIn = confirm("Получить доступ?");
+// alert( logIn );
