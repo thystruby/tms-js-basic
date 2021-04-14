@@ -22,10 +22,12 @@
 
 // let undf = undefined;
 
-// let p = ',';
-// console.log(typeof myNumber + p, typeof str + p, typeof bool + p, typeof n + p, typeof undf)
+// console.log(`${typeof myNumber}, ${typeof str}, ${typeof bool}, ${typeof n}, ${typeof undf}`);
 
-// // Ведь можно как-то проще вывести ЧЕРЕЗ ЗАПЯТУЮ типы переменных,да?)))
+
+
+
+
 
 /**
  * Задание 2.
@@ -35,11 +37,11 @@
  * Выводите в alert следующую строку "Активный администратор: [значение переменной admin]".
  * P.S. Надо использовать шаблонные строки ("обратные" ковычки)
 */
-// let admin, aName, t;
+
+// let admin, aName;
 // aName = 'John';
 // admin = aName;
-// t = 'Активный администратор: ';
-// alert(`${t + admin}`);
+// alert(`Активный администратор:  ${admin}`);
 
 
 
@@ -49,9 +51,9 @@
  * С помощью метод prompt запросите у пользователя его имя. По умолчанию установить значение "Имя пользователя"
  * Выводите в alert строку типа "[константа] [значение, введенное в prompt]"
 */
-// const message = 'Привет ';
+// const message = 'Привет';
 // let userName = prompt('Имя пользователя');
-// alert(message + userName);
+// alert(`${message} ${userName}`);
 
 /**
  * Задание 4.
