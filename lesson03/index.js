@@ -15,6 +15,15 @@
  * ...
 */
 
+// for (let i = 0; i <= 15; i++) {
+//    if (i % 2){
+//       console.log(`${i} это не четное`)
+//    }
+//    else{
+//       console.log(`${i} это четное`)
+//    }
+// }
+
 
 /**
  * Задание 2
@@ -27,16 +36,64 @@
 */
 
 
+// for (let i = 0; i <= 100; i++) {
+//    if(i%3 === false){
+//       console.log('Fizz')
+//    }
+//    if (i%5 === false){
+//       console.log('Buzz')
+//    }
+//    if(i%3 === false && i%5 === false){
+//       console.log('FizzBuzz')
+//    }
+// }
+
+// let i = 0;
+// while (i <= 100) {
+//    if (i === 100) {
+//       break;
+//    }
+//    if (i % 3 === false) {
+//       console.log('Fizz');
+//    }
+//    if (i % 5 === false) {
+//       console.log('Buzz');
+//    }
+//    if (i % 3 === false && i % 5 === false) {
+//       console.log('FizzBuzz');
+//    }
+//    i++;
+// }
+
 /**
  * Задание 3
  * Написать цикл от 0 до 1000. Высчитать сумму всех чисел кратных 4 и сумму всех чисел кратных 3.
 */
+
+// let sum = 0;
+// for (let i = 0; i <= 1000; i++) {
+//    if (i % 4 == false) {
+//       sum = sum + i;
+//    }
+//    continue;
+// }
+// console.log(sum);
 
 
 /**
  * Задание 4
  * Напишите скрипт, который используя оператор while выведет все числа от 45 до 67.
 */
+
+
+// let i = 45;
+// while (i <= 67) {
+//    if (i == 67) {
+//       break;
+//    }
+//    console.log(i++);
+// }
+
 
 
 /**
@@ -52,12 +109,25 @@
 //****
 //*****
 
+// let sum = ''
+// const i = '*';
+// const k = '*****'
+// do{
+//    sum = sum + i
+//    console.log(sum)
+// } while (sum <= k);
+
 
 /**
  * Задание 6
  * Написать функцию, которая будет принимать 2 аргумента и возвращать наименьшее их них
 */
 
+// function minimal(a, b) {
+//    return Math.min(a, b);
+// }
+// const result =  minimal(5, 10);
+// console.log(result);
 
 /**
  * Задание 7
@@ -76,6 +146,29 @@
  * Надо предусмотреть возможность вывода и обратного диапазона (если 'a' будет больше, чем 'b', то надо вывести цифры в порядке от 'b' до 'a')
  * Если числа равно, то надо вывести соответствующее сообщение.
 */
+
+
+// let a = prompt('Введите число');
+// function range(a, b) {
+//    if (a < b && a != null) {
+//       for (let i = a; i <= b; i++) {
+//          console.log(i)
+//       }
+//    }
+//    else if (a > b && a != null) {
+//       for (let i = b; i <= a; i++) {
+//          console.log(i)
+//       }
+//    }
+//    else if (a === null) {
+//       console.log('Ошибка')
+//    }
+//    else{
+//       console.log(`${a} равно ${b}`)
+//    }
+// }
+// let result = range(a, 30);
+
 
 
 /**
