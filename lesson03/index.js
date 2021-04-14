@@ -15,6 +15,20 @@
  * ...
 */
 
+/*
+
+let i = 0;
+
+while (i <= 15) {
+    if ((i % 2) != 0) {
+       console.log(`${i} - это нечетное` )
+    } else {
+       console.log(`${i} - это четное` )
+    }
+    i++;
+} 
+
+*/
 
 /**
  * Задание 2
@@ -26,16 +40,84 @@
  * Надо написать 2 варианта: с помощью цикла for и while
 */
 
+/*
+
+ВАРИАНТ 1
+
+let i = 0;
+
+while (i <= 100) {
+    if  (((i % 5) === 0) && ((i % 3) === 0)) {
+        console.log(`${i} - FizzBuzz`)
+     } else  if ((i % 5) === 0) {
+        console.log(`${i} - Buzz`)
+     } else  if ((i % 3) === 0) {
+        console.log(`${i} - Fizz`)
+     } else {
+        console.log(`${i}`)
+     }
+     i++;
+}
+
+
+ВАРИАНТ 2
+
+for (let i = 0; i <= 100; i++) {
+    if  (((i % 5) === 0) && ((i % 3) === 0)) {
+        console.log(`${i} - FizzBuzz`)
+     } else  if ((i % 5) === 0) {
+        console.log(`${i} - Buzz`)
+     } else  if ((i % 3) === 0) {
+        console.log(`${i} - Fizz`)
+     } else {
+        console.log(`${i}`)
+     }
+}
+
+
+*/
+
+
+
+
 
 /**
  * Задание 3
  * Написать цикл от 0 до 1000. Высчитать сумму всех чисел кратных 4 и сумму всех чисел кратных 3.
+ * 
+ * 
+*/
+
+/*
+
+ let i = 0;
+ let s = 0;
+
+ while (i <= 1000) {
+    if (((i % 4) === 0) || ((i % 3) === 0)) {
+        s += i;
+    }
+    i++;
+ }
+
+ console.log(`Сумма: ${s}`)
+
 */
 
 
 /**
  * Задание 4
  * Напишите скрипт, который используя оператор while выведет все числа от 45 до 67.
+*/
+
+/*
+
+let i = 45;
+
+while (i <= 67) {
+    console.log(`${i++}`)
+}
+
 */
 
 
@@ -52,10 +134,42 @@
 //****
 //*****
 
+/*
+
+let s = '';
+
+for (let i = 1; i <= 10; i++) {
+    s += '*';
+    console.log(`${s}`);
+}
+
+*/
+
 
 /**
  * Задание 6
  * Написать функцию, которая будет принимать 2 аргумента и возвращать наименьшее их них
+*/
+
+/*
+
+let a = prompt('Введите число 1:', 'Число 1')
+let b = prompt('Введите число 2:', 'Число 2')
+
+a = Number(a);
+b = Number(b);
+
+function test(a, b) {
+    if (a > b) {
+        return b;
+    } else {
+        return a;
+    }
+}
+
+const func = test(a, b);
+console.log(func)
+
 */
 
 
@@ -65,6 +179,29 @@
  * Если возраст больше 18, то надо вызвать коллбэк succcess
  * В противном случае - error
  * success и error коллбэки оформите в качестве alert или console.log
+*/
+
+/*
+let name = prompt('Введите имя:', 'Имя')
+let age = prompt('Введите возраст:', 'Возраст')
+
+const checkAge = function(age, success, error) {
+    if(age >= 18) {
+        success();
+        return;
+    }
+    error()
+}
+
+const showAccess = function() {
+    alert('Доступ получен');
+}
+
+const showError = function() {
+    alert(`${name}, вам нет 18 лет`);
+}
+
+checkAge (age, showAccess, showError)
 */
 
 
@@ -77,6 +214,41 @@
  * Если числа равно, то надо вывести соответствующее сообщение.
 */
 
+/* Это задание еще в процессе */
+
+/*
+
+let a = prompt('Введите число:', 'Число')
+const b = 30;
+
+a = Number(a);
+
+const func = function(a, b, success, error) {
+    if((a < b) && (a !== 0)) {
+        success();
+        return;
+    }
+    error()
+}
+
+const showSuccess = function() {
+    for (; a <= b; a++) {
+        console.log(`${a}`)
+    }
+}
+
+let showError = function() {
+   if (a === b) {
+        alert(`Числа a и b равны`)
+        return
+    } else {
+        alert(`Ошибка!`)
+    }
+}
+
+func (a, b, showSuccess, showError)
+
+*/
 
 /**
  * Задание 9
