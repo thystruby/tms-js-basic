@@ -13,14 +13,13 @@
  * Выведите через запятую "типы" этих переменных в консоль
 */
 
-// let n = 123;
-// let userName = "Egor";
-// let compare = 3 < 2;
-// let dayOfweek = null;
+// const n = 123;
+// const userName = "Egor";
+// const compare = 3 < 2;
+// const dayOfweek = null;
 // let day;
 
-// typeof 123, "Egor", 3 < 2, null, day;
-// alert(typeof (123)),  alert(typeof ("Egor")), alert(typeof (3 < 2)), alert(typeof (null)), alert(typeof (day));
+// console.log(`${typeof n}, ${typeof userName}, ${typeof compare}, ${typeof dayOfweek}, ${typeof day}`);
 
 
 
@@ -39,9 +38,9 @@
 */
 
 
-// let name = "John";
-// let admin = name;
-// alert(`Активный администратор: `+ admin)
+// const name = "John";
+// const admin = name;
+// alert(`Активный администратор: ` + admin);
 
 
 /** 
@@ -51,8 +50,8 @@
  * Выводите в alert строку типа "[константа] [значение, введенное в prompt]"
 */
 
-// const hello = "Привет " 
-// let name = prompt("Имя пользователя");
+// const hello = `Привет `;
+// const name = prompt(`Имя пользователя`);
 // alert(hello + name);
 
 

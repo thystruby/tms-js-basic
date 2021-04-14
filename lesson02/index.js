@@ -12,15 +12,13 @@
  * Преобразуйте эти переменные в boolean, string, number с помощью явного преобразования (прим: Boolean()) и выведите значение в консоль.
 */
 
-// let string = 'some string';
-// let age = 1;
-// let boolean = true;
-// let empty = null;
+// const string = 'some string';
+// const age = 1;
+// const boolean = true;
+// const empty = null;
 
-// alert( Boolean(string));
-// alert( String(age));
-// alert( Number(boolean));
-// alert( Boolean (empty));
+// console.log( Boolean(string), String(age), Number(boolean), Boolean (empty));
+
 
 
 
@@ -36,13 +34,11 @@
   * Вывести все результаты через запятую в console.log
 */
 
-// let a1, a2, a3, a4, a5;
-
-// a1= (5 + 3) * (5 - 3);
-// a2= (10 - 6) * 200;
-// a3= 534 * 132 / 18;
-// a4= 123 * 3 + 10,
-// a5= 12*13*14;
+// const a1= (5 + 3) * (5 - 3);
+// const a2= (10 - 6) * 200;
+// const a3= 534 * 132 / 18;
+// const a4= 123 * 3 + 10;
+// const a5= 12*13*14;
 
 // console.log (a1,",",a2,",",a3,",",a4,",",a5);
 
@@ -56,9 +52,9 @@
  * Значение площади должно хранится в переменной s
 */
 
-// let h= 43;
-// let w= 27;
-// let s= h*w;
+// const h= 43;
+// const w= 27;
+// const s= h*w;
 // console.log (s)
 
 
@@ -67,9 +63,9 @@
  * Найдите гипотенузу k по теореме Пифагора.
 */
 
-// let n=3;
-// let m=4;
-// let k= n**2 + m**2;
+// const n=3;
+// const m=4;
+// const k= n**2 + m**2;
 // console.log(k**(1/2))
 
 
@@ -103,16 +99,23 @@
 
   // let n = +prompt('Введите значение n');
   // let m = +prompt('Введите значение m');
-  // Number.isNaN(Number(n));
-  // Number.isNaN(Number(m));
-  // if (n==m) {
-  //   alert( "Числа равны:" + n)
+
+  // if (!(Number(n)) || !(Number(m))) {
+  //   alert("Произошла ошибка");
   // }
 
-  // if (n>m) {
-  //   alert(n)
+  // else if (n===m) {
+  //   alert( "Числа равны:" + n);
   // }
-  // else { alert(m)}
+  
+  // else if (n>m) {
+  //   alert(n);
+  // }
+  // else { 
+  //   alert(m);
+  // }
+
+
 
 
 
@@ -154,12 +157,15 @@
  * Запросить у пользователя 2 значения. Найти остаток от деления 2-х чисел, вывести в alert. Надо так же сделать проверку на то, является ли введенное значение числом.
 */
 
-  // let n = prompt('Введите значение n');
-  // let m = prompt('Введите значение m');
-  // Number.isNaN(Number(n));
-  // Number.isNaN(Number(m));
-  // alert(n % m);
+  let n = prompt('Введите значение n');
+  let m = prompt('Введите значение m');
 
+  if((!Number(n) || !Number(m))){
+    alert("Ошибка")
+  }
+  else {
+  alert(n % m);
+  }
   
 
 
