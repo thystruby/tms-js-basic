@@ -12,15 +12,15 @@
  * Преобразуйте эти переменные в boolean, string, number с помощью явного преобразования (прим: Boolean()) и выведите значение в консоль.
 */
 
-// let S = 'some string';
-// let N = 1;
-// let B = true;
-// let Nu = null;
+// const S = 'some string';
+// const N = 1;
+// const B = true;
+// const Nu = null;
 
-// let convertS = Number(S);
-// let convertN = String(N);
-// let convertB = Object(B) ;
-// let convertNu = Boolean(Nu);
+// const convertS = Number(S);
+// const convertN = String(N);
+// const convertB = Object(B) ;
+// const convertNu = Boolean(Nu);
 
 // console.log(typeof convertS);
 // console.log(typeof convertN);
@@ -41,11 +41,11 @@
   * Вывести все результаты через запятую в console.log
 */
 
-// let a1;
-// let a2;
-// let a3;
-// let a4;
-// let a5;
+// const a1;
+// const a2;
+// const a3;
+// const a4;
+// const a5;
 
 // a1 = (5 + 3) * (5 - 3);
 // a2 = (10 - 6) * 200;
@@ -53,8 +53,7 @@
 // a4 = 123 * 3 + 10;
 // a5 = 12*13*14;
 
-// console.log(a1 + ', ' + a2 + ', ' +  a3 + ', ' +  a4 + ', ' +  a5);
-
+// console.log(`${a1}, ${a2}, ${a3}, ${a4}, ${a5}`);
 
 
 /**
@@ -63,9 +62,8 @@
  * Значение площади должно хранится в переменной s
 */
 
-// let width = 27;
-// let height = 43;
-
+// const width = 27;
+// const height = 43;
 // let s = width * height;
 // console.log(s);
 
@@ -77,10 +75,9 @@
 */
 
 
-// let n = 3;
-// let m = 4;
-
-// let k = Math.sqrt(3**2 + 4**2);
+// const n = 3;
+// const m = 4;
+// const k = Math.sqrt(n**2 + m**2);
 // console.log(k);
 
 
@@ -110,23 +107,23 @@
  * Если в какой-либо из переменных будет введено не число (т.е. строка) ИЛИ ничего не будет введено (пользователь закроет окно ввода), то надо вывести в alert текст "Произошла ошибка". 
 */
 
-// let first = Number(prompt('Введите первое число:'));
-// let second = Number(prompt('Введите второе число:'));
-
-// let checkNaN = Number.isNaN(first && second);
-// let checkNull = (first && second) === 0;
-
-// if(checkNaN || checkNull === true){
+// const first = prompt('Введите первое число:');
+// const second = prompt('Введите второе число:');
+// const checkNaN = Number.isNaN(Number(first)) || Number.isNaN(Number(second));
+// const checkNull = first === null || second === null;
+// console.log(first);
+// console.log(second);
+// console.log(checkNull);
+// if (checkNaN === true || checkNull === true) {
 //   alert('Произошла ошибка');
 // }
-// if (first === second && (checkNaN || checkNull) === false) {
+// else if (first === second) {
 //   alert(`Числа равны: ${first}`);
 // }
-// if (first != second && (checkNaN || checkNull) == false) {
+// else {
 //   alert(`Наибольшее: ${Math.max(first, second)}`);
 // }
-// else{
-// }
+
 
 
 
@@ -142,18 +139,10 @@
 
 
 // const access = confirm('Хотите получить доступ?');
-// let age;
-// if (access === true){
-//   age = prompt('Введите возраст')
+// if(access) {
+//   const age = prompt('Введите возраст');
+//     age >= 18 ? alert('Доступ разрешен') : alert('Доступ запрещен')
 // }
-// if(age >= 18){
-//   alert('Доступ разрешен')
-// }
-// if(age < 18){
-//   alert('Доступ запрещен')
-// }
-
-// Это единственный рабочий вариант, что я нашел, при котором после нажатия НЕТ в confirm он закрывается и действия прекращаются. Выход через тернарный оператор я тут не нашел.
 
 
 
@@ -162,15 +151,10 @@
  * Запросить у пользователя 2 значения. Найти остаток от деления 2-х чисел, вывести в alert. Надо так же сделать проверку на то, является ли введенное значение числом.
 */
 
-// let first = Number(prompt('Введите первое число:'));
-// let second = Number(prompt('Введите второе число:'));
-
-// let checkNaN = Number.isNaN(first && second);
-// let checkNull = (first && second) === 0;
-
-// if(checkNaN || checkNull == false){
+// const first = prompt('Введите первое число:');
+// const second = prompt('Введите второе число:');
+// const checkNaN = Number.isNaN(Number(first)) ||  Number.isNaN(Number(second))  ;
+// const checkNull = first === null || second === null;
+// if(checkNaN === false && checkNull === false){
 //   alert(`Остаток: ${first % second}`);
-// }
-// else{
-
 // }

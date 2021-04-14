@@ -15,13 +15,13 @@
 
 
 
-// let n = 5;
-// let str = 'Hello';
-// let b = true;
-// let nu = null;
-// let d = undefined;
+// const n = 5;
+// const str = 'Hello';
+// const b = true;
+// const nu = null;
+// const d = undefined;
 
-// console.log (typeof(n) + ', ' + typeof(str) + ', ' + typeof(b) + ', ' + typeof(nu) + ', ' + typeof(d));
+// console.log(`${typeof(n)}, ${typeof(str)}, ${typeof(b)}, ${typeof(nu)}, ${typeof(d)}`);
 
 
 
@@ -34,8 +34,8 @@
  * P.S. Надо использовать шаблонные строки ("обратные" ковычки)
 */
 
-// let admin;
-// let name = 'John';
+// const admin;
+// const name = 'John';
 // admin = name;
 
 // alert(`Активный администратор: ${admin}`);
@@ -50,9 +50,9 @@
 */
 
 // const hi = 'Привет';
-// let UserName = prompt('Имя пользователя:');
+// const UserName = prompt('Имя пользователя:');
 
-// alert( hi + ': ' + UserName)
+// alert( `${hi}: ${UserName}`)
 
 
 /**
@@ -61,11 +61,5 @@
  * Выведите в alert значение, полученное из confirm 
 */
 
-let decision = confirm ('Получить доступ?');
- if (decision === true){
-   decision = 'Да'
- }
- else{
-   decision = 'Нет'
- }
-alert(decision);
+// const decision = confirm ('Получить доступ?');
+// alert(decision);
