@@ -25,10 +25,6 @@
 }*/
 
 
-
-
-
-
 /**
  * Задание 2
  * Написать цикл, который будет итерироватся от 1 до 100.
@@ -38,7 +34,33 @@
  * если число кратное и 3 и 5 - то вывести FizzBuzz
  * Надо написать 2 варианта: с помощью цикла for и while
  */
+/*for (let i = 0; i <= 100; i++) {
+    if (i % 3 == 0) {
+        console.log(`${i} Fizz`)
+    }
+    if (i % 5 == 0) {
+        console.log(`${i} Buzz`)
+    }
+    if (i % 5 == 0 && i % 3 == 0) {
+        console.log(`${i} FizzBuzz`)
+    }
+}
 
+
+let i = 0;
+while (i <= 100)
+{
+    if (i % 3 == 0) {
+        console.log(`${i} Fizz`)
+    }
+    if (i % 5 == 0) {
+        console.log(`${i} Buzz`)
+    }
+    if (i % 5 == 0 && i % 3 == 0) {
+        console.log(`${i} FizzBuzz`)
+    }
+    i++;
+}*/
 
 /**
  * Задание 3
