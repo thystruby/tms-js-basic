@@ -15,6 +15,16 @@
  * ...
 */
 
+/*
+for (let i = 0; i < 15; i++) {
+
+    if (i % 2 == 0) {
+      console.log(`${i} это четное число`); 
+} else {
+        console.log(`${i} это нечетное число`);
+    }
+};
+*/
 
 /**
  * Задание 2
@@ -26,16 +36,62 @@
  * Надо написать 2 варианта: с помощью цикла for и while
 */
 
+/*
+for (let i = 1; i <= 100; i++) {
+
+    if (i % 3 == 0 && i % 5 === 0) {
+      console.log("FizzBuzz"); 
+} else if(i % 5 === 0) {
+    console.log("Buzz"); 
+    } else if(i % 3 === 0) {
+        console.log("Fizz"); 
+    };
+};
+*/
+
+/*
+let i = 1;
+while (i <= 100) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log("FizzBuzz"); 
+  } else if(i % 5 === 0) {
+      console.log("Buzz"); 
+      } else if(i % 3 === 0) {
+          console.log("Fizz"); 
+      }
+      i++;
+};
+*/
 
 /**
  * Задание 3
  * Написать цикл от 0 до 1000. Высчитать сумму всех чисел кратных 4 и сумму всех чисел кратных 3.
 */
 
+/*
+let sum = 0
+for (let a = 0; a <= 1000; a++) {
+
+    if (a % 4 == 0) {
+      sum = sum + a; 
+} else if(a % 3 == 0) {
+    sum = sum + a;
+}
+};
+console.log(`${sum}`); 
+*/
+
+        
+    
+
 
 /**
  * Задание 4
  * Напишите скрипт, который используя оператор while выведет все числа от 45 до 67.
+*/
+/*
+let a = 45;
+while (a <= 67) console.log(a++);
 */
 
 
@@ -53,10 +109,32 @@
 //*****
 
 
+/* вроде логично, а нет результата...
+
+let str = '//*';
+for (a = 0; a < 5; a++) {
+   str = str + '*';
+	console.log(str);
+}
+*/
+  
 /**
  * Задание 6
  * Написать функцию, которая будет принимать 2 аргумента и возвращать наименьшее их них
 */
+
+/*
+let a = prompt('введите число');
+let b = prompt('введите другое число');
+function checkNum(a, b) {
+    if (a < b) {
+      return a;
+    } else if (b < a) {
+      return b;
+    }
+  }
+  checkNum();
+  */
 
 
 /**
@@ -68,6 +146,29 @@
 */
 
 
+
+/* 
+
+const limit = 18;
+let checkAge = function (name, age, success, error) {
+    if(age > limit) {
+        success();
+        return;        
+    } else {
+        error();
+    };
+};
+const getAccess = function() {
+    alert("доступ открыт");
+};
+const getNoAccess = function() {
+    alert("доступ закрыт");
+};
+checkAge("John", 22, getAccess, getNoAccess)
+*/
+      
+       
+
 /**
  * Задание 8
  * Написать функцию, которая выведет в консоль числа из диапазона от 'a' до 'b'
@@ -78,12 +179,28 @@
 */
 
 
+
+
 /**
  * Задание 9
  * Написать функцию, которая будет принимать в качестве аргумента объект, удалять все пустые ключи и возвращать этот объект.
  * Пример:
  * { name: 'John', city: 'Minsk', job: '' } => { name: 'Alex', city: 'Minsk' }
 */
+
+
+/*
+function userInfo (name, city, job,) {
+    return {
+        name,
+        city,
+        job,
+    };
+};
+let user= userInfo("Alex", "Minsk")
+console.log(user);
+*/
+
 
 
 /**
@@ -93,9 +210,39 @@
  * Если ключ существует необходимо вернуть true, иначе - false
 */
 
+/*
+let userInfo ={
+    age: 25,
+}
+if (userInfo.age) {
+    console.log(userInfo.age)
+}
+*/
 
 /**
  * Задание 11
  * Создать объект типа {name: 'John', age: 42, city: 'Minsk'}
  * Клонируйте этот массив в новую переменную. Используйте 2 способа: Object.assign и цикл for in.
 */
+/*
+const user = {
+    name: "Alex", 
+    age: 25,
+    city: "Minsk",
+};
+let user_new = Object.assign({}, user);
+console.log(user);
+console.log(user_new);
+*/
+
+const user = {
+    name: "Alex", 
+    age: 25,
+    city: "Minsk",
+};
+for (let key in user) {
+    // ключи
+    console.log( key );  // name, age, isAdmin
+    // значения ключей
+    console.log( user[key] );
+};
