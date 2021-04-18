@@ -14,8 +14,11 @@
  * 1 это нечетное
  * ...
 */
-
-
+let i = 0;
+while (i < 15) { 
+  alert( i );
+  i++;
+}
 /**
  * Задание 2
  * Написать цикл, который будет итерироватся от 1 до 100.
@@ -25,19 +28,34 @@
  * если число кратное и 3 и 5 - то вывести FizzBuzz
  * Надо написать 2 варианта: с помощью цикла for и while
 */
+for (let i = 0; i < 100; i++){
+   
+
+        console.log(i);
+    }
+
+
 
 
 /**
  * Задание 3
  * Написать цикл от 0 до 1000. Высчитать сумму всех чисел кратных 4 и сумму всех чисел кратных 3.
 */
-
+for (let i = 0; i <= 1000; i++) {
+  if (i % 4 == 0) {
+    alert( i );
+  }
+}
 
 /**
  * Задание 4
  * Напишите скрипт, который используя оператор while выведет все числа от 45 до 67.
 */
+let num;
 
+do {
+  num = prompt("Введите все числа от 45 до 67", 45);
+} while (num <= 67 && num);
 
 /**
  * Задание 5*
@@ -52,11 +70,23 @@
 //****
 //*****
 
+let m = '*'
+
+for (i = 0; i < 5; i++ ) {
+  console.log(m);
+  m += '*';
+}
 
 /**
  * Задание 6
  * Написать функцию, которая будет принимать 2 аргумента и возвращать наименьшее их них
 */
+
+function fff(a,b) {
+  return Math.max(a,b);
+}
+
+
 
 
 /**
@@ -66,6 +96,34 @@
  * В противном случае - error
  * success и error коллбэки оформите в качестве alert или console.log
 */
+
+const user = {};
+
+
+const key = prompt('Введите ключ');
+const value = prompt('Введите значение ключа')
+
+const user = {};
+user[key] = value;
+console.log(user[key]);
+
+
+const checkAge = function(age, access, error) {
+  const limit = 18;
+  if(age > limit) {
+    access(age);
+    return;
+  }
+  error(limit);
+}
+const showAcces = function(age) {
+
+  console.log(`Доступ открыт ${age}`)
+};
+checkAge(
+  20,
+  showAcces 
+)
 
 
 /**
@@ -77,6 +135,20 @@
  * Если числа равно, то надо вывести соответствующее сообщение.
 */
 
+function sss(a, b = 30) {
+  if (typeof a === 'undefined') { throw new Error('argument is required');}
+  let j = Math.min(a,b);
+  let k = Math.max(a,b);
+  if (j == k) {
+    console.log('a = b');
+    return;
+  }
+  for (let i = j; i <= k; i++) {
+    console.log(i);
+  }
+}
+
+// ...конец, потому что теперь i == 3
 
 /**
  * Задание 9
@@ -84,7 +156,15 @@
  * Пример:
  * { name: 'John', city: 'Minsk', job: '' } => { name: 'Alex', city: 'Minsk' }
 */
-
+let getUser = obj => {
+  let newObj = {};
+  (Object.keys(obj)).forEach(key => {
+    if (!!obj[key]) {
+      newObj[key] = obj[key];
+    }
+  });
+  return newObj;
+}
 
 /**
  * Задание 10
@@ -93,9 +173,18 @@
  * Если ключ существует необходимо вернуть true, иначе - false
 */
 
+let ffff = (obj, key) => {
+  return Object.keys(obj).includes(key);
+}
 
 /**
  * Задание 11
  * Создать объект типа {name: 'John', age: 42, city: 'Minsk'}
- * Клонируйте этот массив в новую переменную. Используйте 2 способа: Object.assign и цикл for in.
+ * Клонируйте этот массив??????? в новую переменную. Используйте 2 способа: Object.assign и цикл for in.
 */
+
+let o = {name: 'John', age: 42, city: 'Minsk'};
+let o2 = {};
+for (key in o) {
+  Object.assign(o2, {[key]: o[key]})
+}

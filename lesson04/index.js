@@ -12,7 +12,9 @@
  * Добавьте метод getFullName который должен вызывать alert со строкой "Полное имя: [name] [surname]"
 */
 
-
+let o = {name: 'John', surname: 'Doe'};
+o.getFullName = () => { alert(`Полное имя: ${o.name} ${o.surname}`) }
+   
 /**
   * Задание 2
   * Создайте функцию-конструктор User который будет принимать 2 аргумента: имя и фамилия
@@ -21,6 +23,13 @@
   * Выведите в консоль getFullName для 2-х новых объектов
 */
 
+function User(name, surname) {
+  this.name = name;
+  this.surname = surname;
+  this.getFullName = () => {
+    return `Полное имя: ${this.name} ${this.surname}`
+  }
+}
 
 /**
  * Задание 3
@@ -31,6 +40,14 @@
  * Пример вызова: dog.sayHi() => "Собака говорит ГАВ"; dog.fly() => "Собака не умеет летать"
  * raven.sayHi() => "Ворон говорит КАР-КАР"; raven.fly() =>  "Ворон умеет летать"
 */
+
+function Animal(name, voice, canfly) {
+  this.name = name;
+  this.voice = voice;
+  this.canfly = canfly;
+  this.sayHi = () => { alert(`${this.name} говорит ${this.voice}`); }
+  this.fly = () => { alert(this.canfly === false ? `${this.name} не умеет летать` : `${this.name} умеет летать`); }
+}
 
 
 /**
