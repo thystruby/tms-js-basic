@@ -13,7 +13,7 @@
 */
 
 let o = {name: 'John', surname: 'Doe'};
-o.getFullName = () => { alert(`Полное имя: ${o.name} ${o.surname}`) }
+o.getFullName = () => { alert(`Полное имя: ${o.name} ${o.surname}`); }
    
 /**
   * Задание 2
@@ -27,7 +27,7 @@ function User(name, surname) {
   this.name = name;
   this.surname = surname;
   this.getFullName = () => {
-    return `Полное имя: ${this.name} ${this.surname}`
+    return `Полное имя: ${this.name} ${this.surname}`;
   }
 }
 
