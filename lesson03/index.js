@@ -15,6 +15,15 @@
  * ...
 */
 
+// for (let i = 0; i < 15; i++) {
+//     if (i % 2 === 0) {
+//       console.log( i + ` это четное`);
+//     }
+//     else {
+//         console.log( i + ` это нечетное`);
+//       }
+//   }
+
 
 /**
  * Задание 2
@@ -26,17 +35,61 @@
  * Надо написать 2 варианта: с помощью цикла for и while
 */
 
+// for ( let i = 1; i < 100; i++) {
+//     if (i % 3 === 0 && i % 5 === 0) {
+//       console.log( i, '  ', 'Fizz Bazz');
+//     } else if ( i % 3 === 0) {
+//       console.log( i, '  ', 'Fizz');
+//     } else if(i % 5 === 0){
+//       console.log( i, '  ', 'Buzz');
+//     }
+//   }
+
+// let i = 1;
+//   while ( i < 100) {
+//     if ( i % 3 === 0 && i % 5 === 0) {
+//       console.log( i, '  ', 'Fizz Bazz');
+//     } else if ( i % 3 === 0) {
+//       console.log( i, '  ', 'Fizz');
+//     } else if ( i % 5 === 0) {
+//       console.log( i, '  ', 'Buzz');
+//     }
+//     i++;
+//   }
+
 
 /**
  * Задание 3
  * Написать цикл от 0 до 1000. Высчитать сумму всех чисел кратных 4 и сумму всех чисел кратных 3.
 */
 
+// let sumOne = 0;
+// let sumTwo = 0;
+
+// for( let i=0; i < 1000; i++) {
+//     if (i % 3 ===0 ) {
+//         sumOne +=i;
+//     }
+// }
+// console.log(sumOne);
+
+// for( let i=0; i < 1000; i++) {
+//     if (i % 4 ===0 ) {
+//         sumTwo +=i;
+//     }
+// }
+// console.log(sumTwo);
 
 /**
  * Задание 4
  * Напишите скрипт, который используя оператор while выведет все числа от 45 до 67.
 */
+
+    // let i = 45;
+    // while (i < 67) { 
+    // i++;
+    // console.log( i );
+    // }
 
 
 /**
@@ -53,11 +106,32 @@
 //*****
 
 
+// let n = 0;
+// let a = "*";
+// while (n <= 5) {    
+//     console.log(a);    
+//     a+='*';
+//     n++;
+// }
+
+
+
+
 /**
  * Задание 6
- * Написать функцию, которая будет принимать 2 аргумента и возвращать наименьшее их них
+ * Написать функцию, которая будет принимать 2 аргумента и возвращать наименьшее из них
 */
 
+// function compare(a, b) {
+//     if (a < b ) {
+//         console.log(a)
+//     }
+//     else {
+//         console.log(b)
+//     }
+//   }
+  
+//  compare(5,2)
 
 /**
  * Задание 7
@@ -66,6 +140,34 @@
  * В противном случае - error
  * success и error коллбэки оформите в качестве alert или console.log
 */
+
+
+//  function ask(user, success, error) {
+//   if (user.age >= 18){ 
+//      success();
+//   }
+//   else {
+//     error ();
+//   }
+//  }
+
+//  const success = ()=> {
+//   console.log("success")
+//  }
+
+//  const error = ()=> {
+//   console.log("error")
+//  }
+
+
+
+//  let user = {
+//    name: 'Egor',
+//    age: 15
+//  }
+
+// ask(user, success, error)
+  
 
 
 /**
@@ -77,6 +179,27 @@
  * Если числа равно, то надо вывести соответствующее сообщение.
 */
 
+//  function range(a,b=30) {
+//   while (a < b) { 
+//     a++;
+//     console.log(a)
+//   }
+
+//   if (a = '') {
+//     console.log("Ошибка")
+//   }
+
+//   while (a > b) { 
+//     b++;
+//     console.log(b)
+//   }
+
+//   if (a = b) {
+//     console.log("Числа равны")
+//   }
+//   }
+
+// range(20)
 
 /**
  * Задание 9
@@ -84,6 +207,27 @@
  * Пример:
  * { name: 'John', city: 'Minsk', job: '' } => { name: 'Alex', city: 'Minsk' }
 */
+
+
+//  const isEmpty = user => {
+//    for(let key in user){ 
+//      if(!user[key]) {
+//        delete user[key];
+//      }
+//    }
+//    return user;
+//   }
+
+
+
+//  let user = {
+//    name: 'John',
+//    city: 'Minsk',
+//    job: ''
+//  }
+
+//  isEmpty(user);
+
 
 
 /**
@@ -94,8 +238,56 @@
 */
 
 
+//  const checkKey = (user, keys) => {
+//   for(let key in user){ 
+//          if( keys in user) {
+//            return true;
+//          }
+//          else{
+//           return false;
+//         }
+//      }
+
+//     }
+
+//   let user = {
+//    name: 'John',
+//    city: 'Minsk',
+//    job: ''
+//  }
+
+//  console.log(checkKey(user,"name"))
+
 /**
  * Задание 11
  * Создать объект типа {name: 'John', age: 42, city: 'Minsk'}
  * Клонируйте этот массив в новую переменную. Используйте 2 способа: Object.assign и цикл for in.
 */
+
+    // let user = {
+    //  name: 'John',
+    //  age: 42,
+    //  city: 'Minsk',
+    // }
+
+    
+
+    // let changedUser = Object.assign(user)
+
+    // console.log(changedUser, user)
+
+
+    let user = {
+     name: 'John',
+     age: 42,
+     city: 'Minsk',
+    };
+
+    let  userTwo = {};
+    for (let key in user) {
+      userTwo[key]=user[key]
+    }
+
+    let table ="<div>Hello</div>"
+    body.innerH
+    console.log( user,userTwo)
