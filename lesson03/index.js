@@ -287,7 +287,4 @@
     for (let key in user) {
       userTwo[key]=user[key]
     }
-
-    let table ="<div>Hello</div>"
-    body.innerH
     console.log( user,userTwo)
