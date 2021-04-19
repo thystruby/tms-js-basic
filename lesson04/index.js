@@ -15,9 +15,9 @@
 // let user = {
 //     name: 'John',
 //     surname: 'Doe',
-// }
-// user.getFullName = function () {
-//     alert(`Полное имя: ${this.name} ${this.surname}`);
+//     getFullName: function () {
+//         console.log(`Полное имя: ${this.name} ${this.surname}`);
+//     }
 // }
 // user.getFullName();
 
@@ -51,19 +51,19 @@
  * raven.sayHi() => "Ворон говорит КАР-КАР"; raven.fly() =>  "Ворон умеет летать"
 */
 
-// function Animal(name, voice, fly = false) {
+// function Animal(name, voice, canFly = false) {
 //     this.name = name;
 //     this.voice = voice;
-//     this.fly = fly;
-//     this.fly = function () {
-//         if (fly == true) {
+//     this.canFly = canFly;
+//     this.canFly = function () {
+//         if (canFly) {
 //             console.log(`${this.name} ${'can fly'}`)
 //         } else {
 //             console.log(`${this.name} ${'can not fly'}`)
 //         }
 //     }
 //     this.sayHi = function () {
-//         console.log(`${this.name} ${'say'} ${this.voice}`)
+//         console.log(`${this.name} say ${this.voice}`)
 //     };
 // };
 
@@ -74,13 +74,13 @@
 
 
 // cat.sayHi();
-// cat.fly();
+// cat.canFly();
 // pigeon.sayHi();
-// pigeon.fly()
+// pigeon.canFly()
 // dog.sayHi();
-// dog.fly();
+// dog.canFly();
 // parrot.sayHi();
-// parrot.fly();
+// parrot.canFly();
 
 
 /**
@@ -88,10 +88,15 @@
  * Создайте функцию crossOrPile которая будет рандомно возвращать "Орел" или "Решка".
  * Округлять до ближайшего целого.
 */
-// function crossOrPile(x) {
-//     return 
+// function crossOrPile() {
+//     if (Math.round(Math.random()) == 0) {
+//         return ('Орел');
+//     } else {
+//         return ('Решка');
+//     };
 // }
-// crossOrPile(12);
+
+// console.log(crossOrPile());
 
 
 /**
@@ -106,12 +111,10 @@
 //     if (Number.isNaN(a) && Number.isNaN(b)) {
 //         console.log('Введите число')
 //     };
-//     console.log(a.toFixed(2));
-//     console.log(b.toFixed(2));
-//     return Math.pow(a, b);
+//     return Math.pow(a.toFixed(2), b.toFixed(2));
 
 // };
-// console.log(mPow(2, 3));
+// console.log(mPow(3, 2));
 
 
 /**

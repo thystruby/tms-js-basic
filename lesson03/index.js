@@ -178,9 +178,7 @@
  * Надо предусмотреть возможность вывода и обратного диапазона (если 'a' будет больше, чем 'b', то надо вывести цифры в порядке от 'b' до 'a')
  * Если числа равно, то надо вывести соответствующее сообщение.
 */
-// function getNumders(a) {
-//     let b = 30;
-
+// function getNumders(a, b = 30) {
 //     for (let i = a; i <= b; i++) {
 //         let range = '';
 //         range += i;
@@ -198,7 +196,7 @@
 //         console.log('Enter both numbers');
 //     };
 // }
-// getNumders();
+// getNumders(9);
 /**
  * Задание 9
  * Написать функцию, которая будет принимать в качестве аргумента объект, удалять все пустые ключи и возвращать этот объект.
@@ -226,15 +224,22 @@
  * Сделать проверку на существание ключа в объекте
  * Если ключ существует необходимо вернуть true, иначе - false
 */
-
-// function CheckKey() {
-//     let Object = {
-//         name: 'Bob',
-//         gender: 'male',
+// const user = {
+//     name: 'Bob',
+//     gender: 'male',
+// };
+// function CheckKey(obj, key) {
+//     if (key in user) {
+//         return true;
+//     } else {
+//         return false;
 //     };
-//     console.log('city' in Object);
-// }
-// CheckKey();
+// };
+// console.log(CheckKey(user, 'city'));
+
+
+
+
 
 /**
  * Задание 11
@@ -244,23 +249,23 @@
 
 // FOR_IN
 
-// let User = {
+// let user = {
 //     name: 'John',
 //     age: 42,
 //     city: 'Minsk'
 // }
 // let clone = {};
-// for (let key in User) {
-//     clone[key] = User[key];
+// for (let key in user) {
+//     clone[key] = user[key];
 // };
 // console.log(clone);
 
 // OBJECT_ASSIGN
 
-// let User = {
+// let user = {
 //     name: 'John',
 //     age: 42,
 //     city: 'Minsk'
 // }
-// let clone = Object.assign({}, User);
+// let clone = Object.assign({}, user);
 // console.log(clone);
