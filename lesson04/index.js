@@ -12,6 +12,20 @@
  * Добавьте метод getFullName который должен вызывать alert со строкой "Полное имя: [name] [surname]"
 */
 
+/*
+let user = {
+  name: "John",
+  surname: "Doe",
+  getFullName: function() {
+    alert(`"Полное имя: ${this.name} ${this.surname}"`);
+  }
+};
+user.getFullName();
+*/
+
+
+
+
 
 /**
   * Задание 2
@@ -19,6 +33,21 @@
   * Добавьте метод getFullName по аналогии с первым заданием
   * Создайте 2 объекта на основе конструктора и передайте в них разные значения
   * Выведите в консоль getFullName для 2-х новых объектов
+*/
+
+/*
+function User (name, surname) {
+  this.name = name;
+  this.surname = surname;
+  this.getFullName = function() {
+    alert(`"Полное имя: ${this.name} ${this.surname}"`);
+  }
+}
+let user1 = new User("Ольга", "Васильева");
+let user2 = new User("Елена", "Жукова");
+
+console.log(user1.getFullName());
+console.log(user2.getFullName());
 */
 
 
@@ -32,6 +61,28 @@
  * raven.sayHi() => "Ворон говорит КАР-КАР"; raven.fly() =>  "Ворон умеет летать"
 */
 
+/*
+function Animal(name, voice, fly) {
+  this.name = name;
+  this.voice = voice;
+  this.fly = fly;
+  this.sayHi = function() {
+      console.log(`${this.name} говорит ${this.voice}`);
+  };
+  this.flyOrNot = function() {
+    if (this.fly === "can fly") {
+      console.log(`${this.name} умеет летать`);
+    } else {
+      console.log(`${this.name} не умеет летать`);
+    }
+    }
+  };
+
+let cat = new Animal("cat", "мяу", "can fly");
+cat.sayHi()
+cat.flyOrNot()
+*/
+
 
 /**
  * Задание 4
@@ -39,6 +90,16 @@
  * Округлять до ближайшего целого.
 */
 
+/*
+function crossOrPile() {
+  if (Math.floor(Math.random() * 2) === 0) {
+  alert("орел")
+  } else {
+    alert("решка")
+  }
+};    
+crossOrPile();  
+*/
 
 /**
  * Задание 5
@@ -49,6 +110,17 @@
  * Надо использовать Math
 */
 
+/*
+function numberToDegree(number, degree) {
+   
+  if (isFinite(number)) {
+    let numberChecked = Math.round(number)*100/100;
+  console.log(Math.pow(numberChecked, degree));
+  };
+};
+  
+numberToDegree(2.8333, 2);
+*/
 
 /**
  * Задание 6
