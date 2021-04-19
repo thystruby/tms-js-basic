@@ -37,22 +37,22 @@
 
 // for ( let i = 1; i < 100; i++) {
 //     if (i % 3 === 0 && i % 5 === 0) {
-//       console.log( i, '  ', 'Fizz Bazz');
+//       console.log( `${i} FizzBuzz`);
 //     } else if ( i % 3 === 0) {
-//       console.log( i, '  ', 'Fizz');
+//       console.log( `${i} Fizz`);
 //     } else if(i % 5 === 0){
-//       console.log( i, '  ', 'Buzz');
+//       console.log(`${i} Buzz`);
 //     }
 //   }
 
 // let i = 1;
 //   while ( i < 100) {
 //     if ( i % 3 === 0 && i % 5 === 0) {
-//       console.log( i, '  ', 'Fizz Bazz');
+//       console.log( `${i} FizzBuzz`);
 //     } else if ( i % 3 === 0) {
-//       console.log( i, '  ', 'Fizz');
+//       console.log( `${i} Fizz`);
 //     } else if ( i % 5 === 0) {
-//       console.log( i, '  ', 'Buzz');
+//       console.log( `${i} Buzz`);
 //     }
 //     i++;
 //   }
@@ -70,15 +70,14 @@
 //     if (i % 3 ===0 ) {
 //         sumOne +=i;
 //     }
-// }
-// console.log(sumOne);
-
-// for( let i=0; i < 1000; i++) {
 //     if (i % 4 ===0 ) {
-//         sumTwo +=i;
-//     }
+//       sumTwo +=i;
+//   }
 // }
-// console.log(sumTwo);
+// console.log(`${sumOne} ${sumTwo}`);
+
+
+
 
 /**
  * Задание 4
@@ -87,8 +86,7 @@
 
     // let i = 45;
     // while (i < 67) { 
-    // i++;
-    // console.log( i );
+    // console.log( i++ );
     // }
 
 
@@ -124,14 +122,14 @@
 
 // function compare(a, b) {
 //     if (a < b ) {
-//         console.log(a)
+//         return a
 //     }
 //     else {
-//         console.log(b)
+//         return b
 //     }
 //   }
   
-//  compare(5,2)
+//  console.log(compare(5,2))
 
 /**
  * Задание 7
@@ -239,15 +237,7 @@
 
 
 //  const checkKey = (user, keys) => {
-//   for(let key in user){ 
-//          if( keys in user) {
-//            return true;
-//          }
-//          else{
-//           return false;
-//         }
-//      }
-
+//   return keys in user
 //     }
 
 //   let user = {
@@ -256,7 +246,7 @@
 //    job: ''
 //  }
 
-//  console.log(checkKey(user,"name"))
+//  console.log(checkKey(user,"surname"))
 
 /**
  * Задание 11
@@ -277,14 +267,14 @@
     // console.log(changedUser, user)
 
 
-    let user = {
-     name: 'John',
-     age: 42,
-     city: 'Minsk',
-    };
+    // let user = {
+    //  name: 'John',
+    //  age: 42,
+    //  city: 'Minsk',
+    // };
 
-    let  userTwo = {};
-    for (let key in user) {
-      userTwo[key]=user[key]
-    }
-    console.log( user,userTwo)
+    // let  userTwo = {};
+    // for (let key in user) {
+    //   userTwo[key]=user[key]
+    // }
+    // console.log( user,userTwo)
