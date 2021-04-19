@@ -37,13 +37,13 @@
 
 
 // for (let i = 0; i <= 100; i++) {
-//    if(i%3 === false){
+//    if(i%3 === 0){
 //       console.log('Fizz')
 //    }
-//    if (i%5 === false){
+//    if (i%5 === 0){
 //       console.log('Buzz')
 //    }
-//    if(i%3 === false && i%5 === false){
+//    if(i%3 === 0 && i%5 === 0){
 //       console.log('FizzBuzz')
 //    }
 // }
@@ -53,13 +53,13 @@
 //    if (i === 100) {
 //       break;
 //    }
-//    if (i % 3 === false) {
+//    if (i % 3 === 0) {
 //       console.log('Fizz');
 //    }
-//    if (i % 5 === false) {
+//    if (i % 5 === 0) {
 //       console.log('Buzz');
 //    }
-//    if (i % 3 === false && i % 5 === false) {
+//    if (i % 3 === 0 && i % 5 === 0) {
 //       console.log('FizzBuzz');
 //    }
 //    i++;
@@ -72,19 +72,19 @@
 */
 
 
+// let sum3 = 0;
 // let sum4 = 0;
-// let sum5 = 0;
 // for (let i = 0; i <= 1000; i++) {
-//    if (i % 4 == false) {
-//       sum4 = sum4 + i;
+//    if (i % 3 === 0) {
+//       sum3 = sum3 + i;
 //    }
-//    if (i % 5 == false) {
-//       sum5 = sum5 + i;
+//    if (i % 4 === 0) {
+//       sum4 = sum4 + i;
 //    }
 //    continue;
 // }
+// console.log(sum3);
 // console.log(sum4);
-// console.log(sum5);
 
 
 
@@ -97,7 +97,6 @@
 // let i = 45;
 // while (i <= 67) {
 //    if (i == 67) {
-
 //    }
 //    console.log(i++);
 // }
