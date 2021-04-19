@@ -40,7 +40,7 @@
 // const a4= 123 * 3 + 10;
 // const a5= 12*13*14;
 
-// console.log (a1,",",a2,",",a3,",",a4,",",a5);
+// console.log (`${a1}, ${a2}, ${a3}, ${a4}, ${a5}`);
 
 
 
@@ -65,8 +65,8 @@
 
 // const n=3;
 // const m=4;
-// const k= n**2 + m**2;
-// console.log(k**(1/2))
+// const k= (n**2 + m**2)**1/2
+// console.log(k)
 
 
  /**
@@ -81,9 +81,9 @@
 */
 
 // let num = 10;
-// num = ++num;
-// num = ++num;
-// num = --num;
+// ++num;
+// ++num;
+// --num;
 // alert(num);
 
 
@@ -132,19 +132,20 @@
 
 // let age
 // let enter = confirm('Хотите получить доступ?')
-// if (enter=true) {
+// if (enter) {
 //   alert(age = prompt('Возраст?'))
 // }
 // if(age>=18) {
 //   alert("Доступ разрешен")
-// }
+
 // else 
 // alert("Доступ запрещен")
 
 // 2 вариант
-// let age
-// let enter = confirm('Хотите получить доступ?') ? alert(prompt('Возраст?')): "";
-// age >= 18 ? alert("Доступ разрешен"): alert("Доступ запрещен");
+
+
+let age = confirm('Хотите получить доступ?') ? prompt('Возраст?'): "";
+ age >= 18 ? alert("Доступ разрешен"): alert("Доступ запрещен");
 
 
 
@@ -157,15 +158,15 @@
  * Запросить у пользователя 2 значения. Найти остаток от деления 2-х чисел, вывести в alert. Надо так же сделать проверку на то, является ли введенное значение числом.
 */
 
-  let n = prompt('Введите значение n');
-  let m = prompt('Введите значение m');
+  // let n = prompt('Введите значение n');
+  // let m = prompt('Введите значение m');
 
-  if((!Number(n) || !Number(m))){
-    alert("Ошибка")
-  }
-  else {
-  alert(n % m);
-  }
+  // if((!Number(n) || !Number(m))){
+  //   alert("Ошибка")
+  // }
+  // else {
+  // alert(n % m);
+  // }
   
 
 
