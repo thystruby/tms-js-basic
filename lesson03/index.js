@@ -145,8 +145,24 @@
  * В противном случае - error
  * success и error коллбэки оформите в качестве alert или console.log
 */
+// function foo(obj, success, error) {
+//     if(obj.age >= 18) {
+//         success()
+//     } else {
+//         error()
+//     }
+// }
+// foo({name: 'имя', age: 9}, () => console.log('success'), () => console.log('error'))
 
-
+// function foo(obj, success, error) {
+//     const { age, num1 } = obj
+//     if(age >= 18) {
+//         success()
+//     } else {
+//         error()
+//     }
+// }
+// foo({name: 'имя', age: 9, num1: 1, num2: 2}, () => console.log('success'), () => console.log('error'))
 /**
  * Задание 8
  * Написать функцию, которая выведет в консоль числа из диапазона от 'a' до 'b'
@@ -155,14 +171,40 @@
  * Надо предусмотреть возможность вывода и обратного диапазона (если 'a' будет больше, чем 'b', то надо вывести цифры в порядке от 'b' до 'a')
  * Если числа равно, то надо вывести соответствующее сообщение.
 */
-
-
+// function foo(a, b = 30) {
+//     if(!a) {
+//         throw new Error('please, provide correct value for "a"')
+//     }
+//     if(a === b) {
+//         console.log('числа равны')
+//         return
+//     }
+//     if(a > b) {
+//         for(; b < a; b++) {
+//             console.log(b)
+//         }
+//     } else {
+//         for(; a < b; a++) {
+//             console.log(a)
+//         }
+//     }
+// }
+// foo(false, 30)
 /**
  * Задание 9
  * Написать функцию, которая будет принимать в качестве аргумента объект, удалять все пустые ключи и возвращать этот объект.
  * Пример:
  * { name: 'John', city: 'Minsk', job: '' } => { name: 'Alex', city: 'Minsk' }
 */
+// function foo(obj) {
+//     for(let prop in obj) {
+//         if(!obj[prop]) {
+//             delete obj[prop]
+//         }
+//     }
+//     return obj
+// }
+// console.log(foo({name: 'John', city: 'Minsk', job: ''}))
 
 
 /**
@@ -171,10 +213,28 @@
  * Сделать проверку на существание ключа в объекте
  * Если ключ существует необходимо вернуть true, иначе - false
 */
-
+// function foo(obj, key) {
+//     if(!(key in obj)) {
+//         return false
+//     } else {
+//         return true
+//     }
+// }
+// console.log(foo({tut: 'значение'}, 'tut'))
 
 /**
  * Задание 11
  * Создать объект типа {name: 'John', age: 42, city: 'Minsk'}
  * Клонируйте этот массив в новую переменную. Используйте 2 способа: Object.assign и цикл for in.
 */
+// const user = {
+//     name: 'John',
+//     age: 42,
+//     city: 'Minsk',
+// }
+// const user2 = Object.assign({}, user) 
+// const user3 = {}
+// for (let key in user) {
+//     user3[key] = user[key]
+// }
+// console.log(user3)
