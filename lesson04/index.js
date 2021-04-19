@@ -15,16 +15,16 @@
  * 
 */
 
-let user = {
-  name: 'John',
-  surname: 'Doe'
- };
+// let user = {
+//   name: 'John',
+//   surname: 'Doe'
+//  };
 
- user.getFullName = function() {
-   alert("Полное имя " + user['name'] + '' + user['surname']);
- }
+//  user.getFullName = function() {
+//    alert(`Полное имя: ${user['name']} ${user['surname']}`);
+//  }
 
- user.getFullName();
+//  user.getFullName();
 
 
 
@@ -37,6 +37,20 @@ let user = {
   * Выведите в консоль getFullName для 2-х новых объектов
 */
 
+// function User(name, surname) {
+//   this.name = name;
+//   this.surname = surname;
+//   this.getFullName = function() {
+//     console.log(`Полное имя: ${this['name']} ${this['surname']}`);
+//   };
+// }
+//   const userOne = new User ('Джон', 'Траволта');
+//   userOne.getFullName()
+
+//   const userTwo = new User ('Аль', 'Пачино');
+//   userTwo.getFullName()
+
+        
 
 /**
  * Задание 3
@@ -47,6 +61,31 @@ let user = {
  * Пример вызова: dog.sayHi() => "Собака говорит ГАВ"; dog.fly() => "Собака не умеет летать"
  * raven.sayHi() => "Ворон говорит КАР-КАР"; raven.fly() =>  "Ворон умеет летать"
 */
+
+    // function Animal(name, voice, canFly) {
+    //     this.name = name;
+    //     this.voice = voice;
+    //     this.canFly = canFly;
+    //     this.sayHi = function() {
+    //         alert(`${this['name']} говорит ${this['voice']}`);
+    //       };
+    //     this.fly = function() {
+    //       if (canFly) {
+    //       alert( `${this['name']} умеет летать`);
+    //       }
+    //       else if (canFly === false) {
+    //       alert(`${this['name']} не умеет летать`);
+    //       }
+    //   }
+    // }
+        
+    //   const cat = new Animal('Кот', 'Мяу', false);
+    //   cat.sayHi()
+    //   cat.fly()
+
+    //   const raven =  new Animal('Ворон', 'Кар-кар', true);
+    //   raven.sayHi()
+    //   raven.fly()
 
 
 /**
