@@ -56,7 +56,11 @@ function Animal(name, voice, canfly) {
  * Округлять до ближайшего целого.
 */
 
-
+  const crossOrPile = () => {
+    const num = Math.floor(Math.random()* 2);
+    return num === 1 ? 'Орёл' : 'Решка';
+  }
+    console.log(crossOrPile());
 /**
  * Задание 5
  * Создать функцию которая будет принимать 2 значения: число и степень
@@ -66,6 +70,13 @@ function Animal(name, voice, canfly) {
  * Надо использовать Math
 */
 
+ function numb (a,b)  {
+   if (Number.isNaN(Number(a))) {
+     console.log('Error');
+   }
+   return Math.pow(parseFloat(a),parseFloat(b),toFixed(2));
+ }
+   console.log(numb("12,123241221",1));
 
 /**
  * Задание 6
@@ -73,8 +84,13 @@ function Animal(name, voice, canfly) {
  * Напишите функцию, которая будет возвращать клонированный массив.
  * P.S. необходимо использовать цикл
 */
-
-
+    const fruits = ['Яблоко','Апельсин','груша','Мандарин','Дыня'];
+    for (let i =0; i < fruits.length; i++){
+      const element = fruits[i];
+    console.log(element);
+    }
+    
+     
 /**
  * Задание 7
  * Есть массив элементов. Например: [1, 'строка', 2, '-5', 13]
@@ -83,8 +99,14 @@ function Animal(name, voice, canfly) {
  * Если элемент массива является строкой, которую нельзя привести к числу в явном виде, то надо пропускать элемент и переходить к следующему.
  * Пример: [1, 'строка', 2, '-5', 13] => 11
 */
-
-
+  const chisl = [1,2,3,4,5];
+  let sum = 0;
+  for (let i =0; i < chisl.length; i++){
+    let elem = chisl[i];
+    sum += elem;
+  }
+  console.log(sum);
+  
 /**
  * Задание 8
  * Напишите функцию которая будет принимать 2 аргумента: начало и конец диапазона
