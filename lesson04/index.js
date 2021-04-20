@@ -94,7 +94,12 @@
  * Округлять до ближайшего целого.
 */
 
-123
+const crossOrPile = () => {
+  const num = Math.floor(Math.random() * 2);
+  return num === 1 ? 'Орёл' : 'Решка';
+};
+
+console.log(crossOrPile())
 
 /**
  * Задание 5
