@@ -94,12 +94,12 @@
  * Округлять до ближайшего целого.
 */
 
-const crossOrPile = () => {
-  const num = Math.floor(Math.random() * 2);
-  return num === 1 ? 'Орёл' : 'Решка';
-};
+// const crossOrPile = () => {
+//   const num = Math.floor(Math.random() * 2);
+//   return num === 1 ? 'Орёл' : 'Решка';
+// };
 
-console.log(crossOrPile())
+// console.log(crossOrPile())
 
 /**
  * Задание 5
@@ -111,12 +111,34 @@ console.log(crossOrPile())
 */
 
 
+// const numbers = (a, b) => {
+//   if (Number.isNaN(Number(a))) {
+//     return 'Error';
+//   }
+//   return Math.pow(parseFloat(a).toFixed(2), parseFloat(b)).toFixed(2);
+// };
+// console.log(numbers("12.2234284px", 1));
+
+
 /**
  * Задание 6
  * Создайте массив из 5 любых элементов.
  * Напишите функцию, которая будет возвращать клонированный массив.
  * P.S. необходимо использовать цикл
 */
+
+
+// const fruits = ["Яблоко", "Апельсин", "Груша", "Банан", "Персик"];
+// const clonedArr = [];
+// const clone = () => {
+//   for(let i = 0; i < fruits.length; i++){
+//     clonedArr[i] = fruits[i]
+//   }
+//   return clonedArr
+// }
+// console.log( clone()) 
+
+
 
 
 /**
@@ -128,6 +150,18 @@ console.log(crossOrPile())
  * Пример: [1, 'строка', 2, '-5', 13] => 11
 */
 
+// const numbers = [1, 'строка', 2, '-5', 13];
+// let sum = 0;
+// const sumNumbers = () => {
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (Number.isNaN(Number(numbers[i]))) {
+//       continue;
+//     }
+//     sum += +numbers[i];
+//   }
+//   return sum 
+// }
+//   console.log( sumNumbers())
 
 /**
  * Задание 8
