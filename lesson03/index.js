@@ -178,9 +178,26 @@ checkAge("John", 22, getAccess, getNoAccess)
  * Если числа равно, то надо вывести соответствующее сообщение.
 */
 
-
-
-
+/*
+function diapason(a, b = 30) {
+    if (!a) {
+        console.log("error");
+        return;
+    };
+    if (a < b) {
+        
+    for (let i = a; i <= b; i++ ) {
+        console.log(i);
+    };
+} else {
+        for (let i = b; i >= a; i--) {
+            console.log(i);
+        };
+    };
+};
+    diapason(20);
+*/
+    
 /**
  * Задание 9
  * Написать функцию, которая будет принимать в качестве аргумента объект, удалять все пустые ключи и возвращать этот объект.
@@ -235,7 +252,7 @@ console.log(user);
 console.log(user_new);
 */
 
-const user = {
+/*const user = {
     name: "Alex", 
     age: 25,
     city: "Minsk",
@@ -246,3 +263,4 @@ for (let key in user) {
     // значения ключей
     console.log( user[key] );
 };
+*/    
