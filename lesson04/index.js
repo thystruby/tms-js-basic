@@ -129,6 +129,13 @@ numberToDegree(2.8333, 2);
  * P.S. необходимо использовать цикл
 */
 
+/*let arr = ["Яблоко", "Апельсин", "Слива", "Груша", "Гранат",];
+let newArr = [];
+for (let i = 0; i < arr.length; i++) {
+      newArr[i] = arr[i];
+  };
+  return(newArr);
+*/
 
 /**
  * Задание 7
@@ -140,6 +147,21 @@ numberToDegree(2.8333, 2);
 */
 
 
+/*
+let arr = [1, 'строка', 2, '-5', 13];
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+  const element = parseInt(arr[i]);
+    if(typeof element !== "number" || isNaN(element)) {
+    continue; 
+ } else {
+     sum += Number(element);      
+};
+};
+console.log(sum);
+*/
+
+
 /**
  * Задание 8
  * Напишите функцию которая будет принимать 2 аргумента: начало и конец диапазона
@@ -147,6 +169,18 @@ numberToDegree(2.8333, 2);
  * Пример: range(1, 10) => 3628800. Что соответствует 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10
 */
 
+/*
+function numbers(numOne, numTwo) {
+let numberMulti = numOne;
+if(numOne <= numTwo) {
+  for(let i=numOne; i <= numTwo; i++) {
+  numberMulti *= i
+  }  
+}
+return numberMulti;
+}
+console.log(numbers(1, 10));
+*/
 
 /**
  * Задание 9
@@ -158,6 +192,20 @@ numberToDegree(2.8333, 2);
  * Пример: findUser(data, 'BRUce') => {name: 'Bruce', age: 50}
 */
 
+/*
+const data = [
+  {name: 'John', age: 42},
+  {name: 'Ashton', age: 37},
+  {name: 'Bruce', age: 50}
+];
+
+let someUsers = data.filter(item => item.name === 'Bruce')
+if (someUsers === NaN || someUsers === undefined) {
+  alert("No results found for your request")
+} else {
+console.log(someUsers);
+};
+*/
 
 /**
  * Задание 10
@@ -178,3 +226,25 @@ numberToDegree(2.8333, 2);
  * Зина - 3
  * ...
 */
+
+/* это пока не готово, затуп */
+const Percentage = [
+  {name: 'Вася', percent: 80},
+  {name: 'Зина', percent: 77},
+  {name: 'Катя', percent: 88},
+  {name: 'Петя', percent: 95},
+  {name: 'Вова', percent: 57},
+];
+const PersentToNum = Percentage.forEach((item, index, array) => {
+  
+if (PersentToNum >= 90) {
+  return PersentToNum = 5;  
+} else if (PersentToNum >= 80) {
+  return PersentToNum = 4;
+} else if (PersentToNum >= 70) {
+  return PersentToNum = 3;
+} else if(PersentToNum >= 60) {
+  return PersentToNum = 2;
+}
+});
+console.log(PersentToNum)
