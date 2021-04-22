@@ -134,7 +134,7 @@ let newArr = [];
 for (let i = 0; i < arr.length; i++) {
       newArr[i] = arr[i];
   };
-  return(newArr);
+  return newArr;
 */
 
 /**
@@ -160,7 +160,20 @@ for (let i = 0; i < arr.length; i++) {
 };
 console.log(sum);
 */
-
+//вариант 2
+/*
+let arr = [1, 'строка', 2, '-5', 13];
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+  const element = parseInt(arr[i]);
+    if(Number.isNaN(element)) {
+    continue; 
+ } else {
+     sum += Number(element);      
+};
+};
+console.log(sum);
+*/
 
 /**
  * Задание 8
@@ -205,6 +218,21 @@ if (someUsers === NaN || someUsers === undefined) {
 } else {
 console.log(someUsers);
 };
+
+//вариант 2*/
+
+/*const data = [
+  {name: 'John', age: 42},
+  {name: 'Ashton', age: 37},
+  {name: 'Bruce', age: 50}
+];
+
+let someUsers = data.find(item => item.name === 'Bruce')
+if (someUsers === undefined) {
+  alert("No results found for your request")
+} else {
+console.log(someUsers);
+};
 */
 
 /**
@@ -228,7 +256,7 @@ console.log(someUsers);
 */
 
 /* это пока не готово, затуп */
-const Percentage = [
+/*const Percentage = [
   {name: 'Вася', percent: 80},
   {name: 'Зина', percent: 77},
   {name: 'Катя', percent: 88},
@@ -248,3 +276,4 @@ if (PersentToNum >= 90) {
 }
 });
 console.log(PersentToNum)
+*/
