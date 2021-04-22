@@ -21,7 +21,7 @@
 //  };
 
 //  user.getFullName = function() {
-//    alert(`Полное имя: ${user['name']} ${user['surname']}`);
+//    alert(`Полное имя: ${user.name} ${user.surname}`);
 //  }
 
 //  user.getFullName();
@@ -41,7 +41,7 @@
 //   this.name = name;
 //   this.surname = surname;
 //   this.getFullName = function() {
-//     console.log(`Полное имя: ${this['name']} ${this['surname']}`);
+//     console.log(`Полное имя: ${this.name} ${this.surname}`);
 //   };
 // }
 //   const userOne = new User ('Джон', 'Траволта');
@@ -67,14 +67,14 @@
     //     this.voice = voice;
     //     this.canFly = canFly;
     //     this.sayHi = function() {
-    //         alert(`${this['name']} говорит ${this['voice']}`);
+    //         alert(`${this.name} говорит ${this.voice}`);
     //       };
     //     this.fly = function() {
     //       if (canFly) {
-    //       alert( `${this['name']} умеет летать`);
+    //       alert( `${this.name} умеет летать`);
     //       }
     //       else if (canFly === false) {
-    //       alert(`${this['name']} не умеет летать`);
+    //       alert(`${this.name} не умеет летать`);
     //       }
     //   }
     // }
@@ -95,7 +95,7 @@
 */
 
 // const crossOrPile = () => {
-//   const num = Math.floor(Math.random() * 2);
+//   const num = Math.round(Math.random() * 2);
 //   return num === 1 ? 'Орёл' : 'Решка';
 // };
 
@@ -115,9 +115,9 @@
 //   if (Number.isNaN(Number(a))) {
 //     return 'Error';
 //   }
-//   return Math.pow(parseFloat(a).toFixed(2), parseFloat(b)).toFixed(2);
+//   return Math.pow(parseFloat(a), parseFloat(b)).toFixed(2);
 // };
-// console.log(numbers("12.2234284px", 1));
+// console.log(numbers(12.223232, 1));
 
 
 /**
@@ -170,10 +170,19 @@
  * Пример: range(1, 10) => 3628800. Что соответствует 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10
 */
 
+// let sum = 1
+// const range = (a, b) => {
+//   for (a = 1; a < b; a++) { 
+//   sum *= a
+//   }
+//   return sum
+// }
+// console.log (range(1,10))
+
 
 /**
  * Задание 9
- * Создайте массив объектов типа const data = [{ name: 'John', age: 42 }, {name: 'Ashton' age: 37}, {name: 'Bruce', age: 50}, {name: 'Dakota', age: 25}]
+ * Создайте массив объектов типа const data = [{ name: 'John', age: 42 }, {name: 'Ashton' age: 37}, {name: 'Bruce', age: 50} {name: 'Dakota', age: 25}]
  * Создайте функцию которая будет реализовывать поиск по имени. Функция должна принимать 2 аргумента: массив объектов и строку поиска
  * Поиск должен быть независимым от регистра
  * Если элемент найден, то надо вызывать alert с этим объектом
@@ -181,6 +190,22 @@
  * Пример: findUser(data, 'BRUce') => {name: 'Bruce', age: 50}
 */
 
+const data = [
+  { name: 'John', age: 42 },
+  { name: 'Ashton', age: 37 },
+  { name: 'Bruce', age: 50 },
+  { name: 'Dakota', age: 25 },
+];
+
+const findUsers = (data, name) => {
+  let findUser = data.find((item) => item.name.toLowerCase() === name.toLowerCase());
+  if (findUser === undefined) {
+    console.log('No results found for your request');
+  } else {
+    console.log(findUser);
+  }
+};
+findUsers(data, 'bruce');
 
 /**
  * Задание 10
