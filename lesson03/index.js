@@ -109,8 +109,8 @@ while (a <= 67) console.log(a++);
 //*****
 
 
-/* вроде логично, а нет результата...
 
+/*
 let str = '//*';
 for (a = 0; a < 5; a++) {
    str = str + '*';
@@ -252,15 +252,13 @@ console.log(user);
 console.log(user_new);
 */
 
-/*const user = {
+const user = {
     name: "Alex", 
     age: 25,
     city: "Minsk",
 };
+let userClone = {}
 for (let key in user) {
-    // ключи
-    console.log( key );  // name, age, isAdmin
-    // значения ключей
-    console.log( user[key] );
+    userClone[key] = user[key];
 };
-*/    
+console.log(userClone);

@@ -11,7 +11,13 @@
  * Написать код, который заменит регистр каждого символа на противоположный
  * Например 'Hello world' -> 'hELLO WORLD'
 */
-
+const str = 'HelloWorld';
+const arr = str.split('');
+const newArr = arr.map((item, index) => {
+  if(item.toUpperCase() === item) {    
+  return item;
+}});
+console.log(newArr.join(''));
 
 /**
  * Задание 2
