@@ -12,6 +12,20 @@
  * Добавьте метод getFullName который должен вызывать alert со строкой "Полное имя: [name] [surname]"
 */
 
+/*
+let user = {
+  name: "John",
+  surname: "Doe",
+  getFullName: function() {
+    alert(`"Полное имя: ${this.name} ${this.surname}"`);
+  }
+};
+user.getFullName();
+*/
+
+
+
+
 
 /**
   * Задание 2
@@ -19,6 +33,21 @@
   * Добавьте метод getFullName по аналогии с первым заданием
   * Создайте 2 объекта на основе конструктора и передайте в них разные значения
   * Выведите в консоль getFullName для 2-х новых объектов
+*/
+
+/*
+function User (name, surname) {
+  this.name = name;
+  this.surname = surname;
+  this.getFullName = function() {
+    alert(`"Полное имя: ${this.name} ${this.surname}"`);
+  }
+}
+let user1 = new User("Ольга", "Васильева");
+let user2 = new User("Елена", "Жукова");
+
+console.log(user1.getFullName());
+console.log(user2.getFullName());
 */
 
 
@@ -32,6 +61,28 @@
  * raven.sayHi() => "Ворон говорит КАР-КАР"; raven.fly() =>  "Ворон умеет летать"
 */
 
+/*
+function Animal(name, voice, fly) {
+  this.name = name;
+  this.voice = voice;
+  this.fly = fly;
+  this.sayHi = function() {
+      console.log(`${this.name} говорит ${this.voice}`);
+  };
+  this.flyOrNot = function() {
+    if (this.fly === "can fly") {
+      console.log(`${this.name} умеет летать`);
+    } else {
+      console.log(`${this.name} не умеет летать`);
+    }
+    }
+  };
+
+let cat = new Animal("cat", "мяу", "can fly");
+cat.sayHi()
+cat.flyOrNot()
+*/
+
 
 /**
  * Задание 4
@@ -39,6 +90,16 @@
  * Округлять до ближайшего целого.
 */
 
+/*
+function crossOrPile() {
+  if (Math.floor(Math.random() * 2) === 0) {
+  alert("орел")
+  } else {
+    alert("решка")
+  }
+};    
+crossOrPile();  
+*/
 
 /**
  * Задание 5
@@ -49,6 +110,17 @@
  * Надо использовать Math
 */
 
+/*
+function numberToDegree(number, degree) {
+   
+  if (isFinite(number)) {
+    let numberChecked = Math.round(number)*100/100;
+  console.log(Math.pow(numberChecked, degree));
+  };
+};
+  
+numberToDegree(2.8333, 2);
+*/
 
 /**
  * Задание 6
@@ -57,6 +129,13 @@
  * P.S. необходимо использовать цикл
 */
 
+/*let arr = ["Яблоко", "Апельсин", "Слива", "Груша", "Гранат",];
+let newArr = [];
+for (let i = 0; i < arr.length; i++) {
+      newArr[i] = arr[i];
+  };
+  return newArr;
+*/
 
 /**
  * Задание 7
@@ -68,6 +147,34 @@
 */
 
 
+/*
+let arr = [1, 'строка', 2, '-5', 13];
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+  const element = parseInt(arr[i]);
+    if(typeof element !== "number" || isNaN(element)) {
+    continue; 
+ } else {
+     sum += Number(element);      
+};
+};
+console.log(sum);
+*/
+//вариант 2
+/*
+let arr = [1, 'строка', 2, '-5', 13];
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+  const element = parseInt(arr[i]);
+    if(Number.isNaN(element)) {
+    continue; 
+ } else {
+     sum += Number(element);      
+};
+};
+console.log(sum);
+*/
+
 /**
  * Задание 8
  * Напишите функцию которая будет принимать 2 аргумента: начало и конец диапазона
@@ -75,6 +182,18 @@
  * Пример: range(1, 10) => 3628800. Что соответствует 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10
 */
 
+/*
+function numbers(numOne, numTwo) {
+let numberMulti = numOne;
+if(numOne <= numTwo) {
+  for(let i=numOne; i <= numTwo; i++) {
+  numberMulti *= i
+  }  
+}
+return numberMulti;
+}
+console.log(numbers(1, 10));
+*/
 
 /**
  * Задание 9
@@ -86,6 +205,35 @@
  * Пример: findUser(data, 'BRUce') => {name: 'Bruce', age: 50}
 */
 
+/*
+const data = [
+  {name: 'John', age: 42},
+  {name: 'Ashton', age: 37},
+  {name: 'Bruce', age: 50}
+];
+
+let someUsers = data.filter(item => item.name === 'Bruce')
+if (someUsers === NaN || someUsers === undefined) {
+  alert("No results found for your request")
+} else {
+console.log(someUsers);
+};
+
+//вариант 2*/
+
+/*const data = [
+  {name: 'John', age: 42},
+  {name: 'Ashton', age: 37},
+  {name: 'Bruce', age: 50}
+];
+
+let someUsers = data.find(item => item.name === 'Bruce')
+if (someUsers === undefined) {
+  alert("No results found for your request")
+} else {
+console.log(someUsers);
+};
+*/
 
 /**
  * Задание 10
@@ -106,3 +254,29 @@
  * Зина - 3
  * ...
 */
+
+/* это пока не готово, затуп */
+
+
+const Percentage = [
+  {name: 'Вася', percent: 80},
+  {name: 'Зина', percent: 77},
+  {name: 'Катя', percent: 88},
+  {name: 'Петя', percent: 95},
+  {name: 'Вова', percent: 57},
+];
+Percentage.forEach((item, index, array) => {
+  
+if (item.percent >= 90) {
+  console.log(`${item.name} -5`); 
+} else if (item.percent >= 80) {
+  console.log(`${item.name} -4`); 
+} else if (item.percent >= 70) {
+  console.log(`${item.name} -3`); 
+} else if (item.percent >= 60) {
+  console.log(`${item.name} -2`); 
+};
+});
+
+
+
