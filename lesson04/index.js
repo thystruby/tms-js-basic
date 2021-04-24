@@ -227,31 +227,31 @@
  * ...
 */
 
-const students = [
-  {name: 'Вася', percent: 80}, 
-  {name: 'Зина', percent: 77},
-  {name: 'Катя', percent: 88},
-  {name: 'Петя', percent: 95},
-  {name: 'Вова', percent: 57}
-]
+// const students = [
+//   {name: 'Вася', percent: 80}, 
+//   {name: 'Зина', percent: 77},
+//   {name: 'Катя', percent: 88},
+//   {name: 'Петя', percent: 95},
+//   {name: 'Вова', percent: 57}
+// ]
 
-const checkPercentage = () => {
-  students.forEach ((item) => {
-    if (item.percent >= 90) {
-      console.log(`${item.name} - 5`);
-    }
-    else if  (item.percent >= 80) {
-      console.log(`${item.name} - 4`);    
-    }
-    else if  (item.percent >= 70) {
-      console.log(`${item.name} - 3`);
-    }
-    else if  (item.percent >= 60) {
-      console.log(`${item.name} - 2`);
-    }
-  })
-}
+// const checkPercentage = () => {
+//   students.forEach ((item) => {
+//     if (item.percent >= 90) {
+//       console.log(`${item.name} - 5`);
+//     }
+//     else if  (item.percent >= 80) {
+//       console.log(`${item.name} - 4`);    
+//     }
+//     else if  (item.percent >= 70) {
+//       console.log(`${item.name} - 3`);
+//     }
+//     else if  (item.percent >= 60) {
+//       console.log(`${item.name} - 2`);
+//     }
+//   })
+// }
 
-checkPercentage()
+// checkPercentage()
 
 
