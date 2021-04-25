@@ -112,12 +112,12 @@
 
 
 // const numbers = (a, b) => {
-//   if (Number.isNaN(Number(a))) {
+//   if (Number.isNaN(Number(parseFloat(a)))) {
 //     return 'Error';
 //   }
-//   return Math.pow(parseFloat(a), parseFloat(b)).toFixed(2);
+//   return Math.pow(a , parseFloat(b)).toFixed(2);
 // };
-// console.log(numbers(12.223232, 1));
+// console.log(numbers(12.223232, 1.22222));
 
 
 /**
@@ -128,9 +128,11 @@
 */
 
 
-// const fruits = ["Яблоко", "Апельсин", "Груша", "Банан", "Персик"];
-// const clonedArr = [];
+
+
 // const clone = () => {
+//   const fruits = ["Яблоко", "Апельсин", "Груша", "Банан", "Персик"];
+//   const clonedArr = [];
 //   for(let i = 0; i < fruits.length; i++){
 //     clonedArr[i] = fruits[i]
 //   }
@@ -151,17 +153,18 @@
 */
 
 // const numbers = [1, 'строка', 2, '-5', 13];
-// let sum = 0;
 // const sumNumbers = () => {
+//   let sum = 0;
 //   for (let i = 0; i < numbers.length; i++) {
 //     if (Number.isNaN(Number(numbers[i]))) {
 //       continue;
 //     }
 //     sum += +numbers[i];
 //   }
-//   return sum 
+//   return sum;
 // }
-//   console.log( sumNumbers())
+
+//   console.log( sumNumbers(numbers))
 
 /**
  * Задание 8
@@ -170,8 +173,9 @@
  * Пример: range(1, 10) => 3628800. Что соответствует 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10
 */
 
-// let sum = 1
+
 // const range = (a, b) => {
+//   let sum = 1
 //   for (a = 1; a < b; a++) { 
 //   sum *= a
 //   }
@@ -235,23 +239,30 @@
 //   {name: 'Вова', percent: 57}
 // ]
 
+
+// const returnPercent = (number) =>{
+//   if(!Number.isNaN(number)){
+//     if (number >= 90) {
+//       return  5;
+//     }
+//     else if  (number >= 80) {
+//      return 4;    
+//     }
+//     else if  (number >= 70) {
+//       return 3;
+//     }
+//     else if  (number <= 60) {
+//       return 2;
+//     }
+//   }
+// }
+
 // const checkPercentage = () => {
 //   students.forEach ((item) => {
-//     if (item.percent >= 90) {
-//       console.log(`${item.name} - 5`);
-//     }
-//     else if  (item.percent >= 80) {
-//       console.log(`${item.name} - 4`);    
-//     }
-//     else if  (item.percent >= 70) {
-//       console.log(`${item.name} - 3`);
-//     }
-//     else if  (item.percent >= 60) {
-//       console.log(`${item.name} - 2`);
-//     }
+//     console.log(`${item.name} - ${returnPercent(item.percent)}`);
 //   })
 // }
 
-// checkPercentage()
+// checkPercentage();
 
 
