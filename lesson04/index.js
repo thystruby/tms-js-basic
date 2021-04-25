@@ -240,8 +240,7 @@
 // ]
 
 
-// const returnPercent = (number) =>{
-//   if(!Number.isNaN(number)){
+// const returnPercent = (number) => {
 //     if (number >= 90) {
 //       return  5;
 //     }
@@ -255,7 +254,6 @@
 //       return 2;
 //     }
 //   }
-// }
 
 // const checkPercentage = () => {
 //   students.forEach ((item) => {
