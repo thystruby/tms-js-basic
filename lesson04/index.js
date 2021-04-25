@@ -132,6 +132,16 @@
 */
 
 
+// const a = ['first, second, third, fourth'];
+// function clone() {
+//   let b = [];
+//   for (let i = 0; i < a.length; i++) {
+//     b[i] = a[i];
+//   }
+//   return b;
+// }
+
+
 /**
  * Задание 7
  * Есть массив элементов. Например: [1, 'строка', 2, '-5', 13]
@@ -142,12 +152,42 @@
 */
 
 
+// const array = [1, 'строка', 2, '-5', 13];
+
+// function result() {
+//   let sum = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     if (Number.isNaN(Number(array[i]))) {
+//       continue;
+//     } else {
+//       sum += Number(array[i]);
+//     }
+//   }
+//   console.log(sum);
+// }
+
+// result();
+
+
 /**
  * Задание 8
  * Напишите функцию которая будет принимать 2 аргумента: начало и конец диапазона
  * Функция должна возвращать произведение всех элементов в заданном диапазоне.
  * Пример: range(1, 10) => 3628800. Что соответствует 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10
 */
+
+
+// function range(a, b) {
+//   let result = [];
+//   let sum = 1;
+//   let k = b - a;
+//   for (let i = 0; i <= k; i++) {
+//     result[i] = a++;
+//     sum *= result[i];
+//   }
+//   console.log(sum);
+// }
+// range(1, 10);
 
 
 /**
@@ -159,6 +199,32 @@
  * В противном случае вызывать alert с текстом "No results found for your request"
  * Пример: findUser(data, 'BRUce') => {name: 'Bruce', age: 50}
 */
+
+
+// const name = prompt('Введите имя:', 'john');
+
+// const data = [
+//   { name: 'John', age: 42 },
+//   { name: 'Ashton', age: 37 },
+//   { name: 'Bruce', age: 50 },
+//   { name: 'Dakota', age: 25 },
+// ];
+
+// function findUser(arrayObj, target) {
+//   target = target.toLowerCase();
+//   target = target.split('');
+//   target.splice(0, 1, target[0].toUpperCase());
+//   target = target.join('');
+//   let result = arrayObj.find(item => item.name == target);
+//   console.log(result);
+//   if (result === undefined) {
+//     alert(Object.entries(result));
+//   } else {
+//     alert('No results found for your request');
+//   }
+// }
+
+// findUser(data, name);
 
 
 /**
@@ -180,3 +246,29 @@
  * Зина - 3
  * ...
 */
+
+
+// const student = [
+//   { name: 'Вася', percent: 80 },
+//   { name: 'Зина', percent: 77 },
+//   { name: 'Катя', percent: 88 },
+//   { name: 'Петя', percent: 95 },
+//   { name: 'Вова', percent: 57 },
+// ]
+
+// function checkPercentage(students) {
+//   students.filter(function (item) {
+//     if (item.percent >= 90) {
+//       console.log(`${item.name} - 5`);
+//     } else if (item.percent >= 80 && item.percent < 90) {
+//       console.log(`${item.name} - 4`);
+//     } else if (item.percent >= 70 && item.percent < 80) {
+//       console.log(`${item.name} - 3`);
+//     } else if (item.percent >= 60 && item.percent < 70) {
+//       console.log(`${item.name} - 2`);
+//     } else {
+//       console.log(`${item.name} - ПРОВАЛ`);
+//     }
+//   });
+// }
+// checkPercentage(student);
