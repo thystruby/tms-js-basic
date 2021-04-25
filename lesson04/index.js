@@ -257,7 +257,7 @@
 // ]
 
 // function checkPercentage(students) {
-//   students.filter(function (item) {
+//   students.filter((item) => {
 //     if (item.percent >= 90) {
 //       console.log(`${item.name} - 5`);
 //     } else if (item.percent >= 80 && item.percent < 90) {
