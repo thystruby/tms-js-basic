@@ -29,6 +29,10 @@
 
 // console.log (changeRegister(str))
 
+
+
+
+
 /**
  * Задание 2
  * Написать функцию, которая будет принимать 2 аргумента: строку и массив, а далее фильтровать строку и заменять запрещенные слова на конструкцию типа  '[первая буква слова]***'
@@ -113,19 +117,19 @@
 */
 
 
-//     const arr = [
-//         {name: 'Вася', age: 12}, 
-//         {name: 'Маша', age: 27}, 
-//         {name: 'Петя', age: 30}
-//         ];
+  //   const arr = [
+  //       {name: 'Вася', age: 12}, 
+  //       {name: 'Маша', age: 27}, 
+  //       {name: 'Петя', age: 30}
+  //       ];
 
 
-//     const sortByAge = () => {
-//         arr.sort((a, b) => a.age > b.age ? -1 : 1)
-//         return arr
-//     }
+  //   const sortByAge = (arr) => {
+  //       arr.sort((a, b) => a.age > b.age ? -1 : 1)
+  //       return arr
+  //   }
 
-//   console.log (sortByAge())
+  // console.log (sortByAge(arr))
 
  
 
@@ -160,9 +164,9 @@
 */
 
 // const arr = [1, 2, 3, 4 , "lesson" , "task"];
-// let a = 10;
+// let a = 2;
 
-//     function getNumber() {
+//     function getNumber(arr,a) {
 //         for(let i=0; i < arr.length; i++) {
 //           if(arr[i] === a) {
 //             return i;
@@ -218,6 +222,7 @@
 //     let str = obj.string.slice(obj.start, obj.end);
 //     let result = obj.string.replace(str, '...');
 //     return result;
+    
 //   };
 
 //   console.log(cropString(obj));
