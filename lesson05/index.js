@@ -47,7 +47,7 @@
 // const forbidenWords = (str, array) => {
 //     let strArr = str.split(' ').filter((item) => item !== '');
 //     strArr = strArr.map((elementOfString, index) => {
-//       if (array.indexOf(elementOfString.toLowerCase()) !== -1) {
+//       if (array.includes(elementOfString.toLowerCase())) {
 //         strArr[index] = `${elementOfString[0]}***`;
 //       }
 //       return strArr[index];
@@ -221,8 +221,11 @@
 //   const cropString = (obj) => {
 //     let str = obj.string.slice(obj.start, obj.end);
 //     let result = obj.string.replace(str, '...');
+
+//     if(obj.start + obj.end > obj.string.length){
+//       return obj.string;
+//     }
 //     return result;
-    
 //   };
 
 //   console.log(cropString(obj));
