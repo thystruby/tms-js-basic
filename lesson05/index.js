@@ -172,15 +172,21 @@
  * Написать функцию, которая будет принимать в качестве параметра объект вида {start: Number, end: Number, string: String} и обрезать строку из центра в соответствии со значениями start и end.
  * Например: cropString({start: 5, end: 5, string: 'r47qi8883jshdntkpy' }) => 'r47qi...ntkpy'
 */
-// const obj = {
-//     start: 5,
-//     end: 9,
-//     str: 'r47qi8883jshdntkpy',
-// }
-// const cropString = (obj) => {
-//     let str = obj.str.slice(obj.start, obj.end);
-//     let result = obj.str.replace(str, '...');
-//     return result;
-// };
 
-// console.log(cropString(obj));
+const obj = {
+    start: 5,
+    end: 14,
+    str: 'r47qi8883jshdntkpy',
+}
+
+
+const cropString = (obj) => {
+    let str = obj.str.slice(obj.start, obj.end);
+    let result = obj.str.replace(str, '...');
+    return result;
+};
+if (obj.end >= obj.str.length) {
+    console.log(obj.str);
+}
+else { console.log(cropString(obj)); }
+
