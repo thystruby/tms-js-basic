@@ -38,13 +38,21 @@
  * P.S. используйте map()
  * P.S.S. Строку необходимо разбить по символу пробела ' ' что бы получить массив слов
 */
-// let arr = ['fuck', 'criminal', 'drugs', 'gun', 'stupid'];
-// let str = 'i have a gun';
-// let arr2 = str.split(' ');
-// function textFilter(arr, str) {
+// let error = ['fuck', 'criminal', 'drugs', 'gun', 'stupid'];
+
+// function textFilter(str, wWords) {
+//     const arr2 = str.split(' ');
+//     const filteredString = arr2.map((item) => {
+//         if (wWords.includes(item)) {
+//             return `${item[0]}***`
+//         }
+//         return item
+//     })
+//     return filteredString.join(' ')
 
 // }
-// Пока нет, буду пробовать еще.
+// console.log(textFilter('would you like some drugs ?', error));
+
 
 /**
  * Задание 3
@@ -53,7 +61,7 @@
  * Пример: getRepeatingElements(["кришна", "кришна", "харе", "харе", 1]) => ["кришна", "харе"]
 */
 
-// const repItem = ['hello', 'apple', 'bird', 'apple', 'orange']
+// const repItem = ['hello', 'apple', 'bird', 'bird', 'apple', 'orange']
 // let repItem2 = [];
 // const repeatIrem = repItem.slice().sort()
 // for (let i = 0; i < repeatIrem.length; i++) {
@@ -112,12 +120,18 @@
  * Функция должна вернуть индекс если такое значение есть в массиве и -1 если его нет.
  * (indexOf, findIndex не использовать)
 */
-// const array = [1, 2, 3, 4, 5, 6]
-// function indexOfItem(array, a = 1) {
+// const arr = [1, 2, 3, 4, 5, 6];
+// function indexOfItem(arr, a) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] == a) {
+//             return i;
+//         }
+//     } return -1
 
 // }
-// console.log(indexOfItem());
-// Пока нет, буду пробовать еще.
+// console.log(indexOfItem(arr, 3));
+
+
 /**
  * Задание 8
  * Создать массив из 10 чисел. Необходимо высчитать сумму всех элементов
@@ -158,4 +172,15 @@
  * Написать функцию, которая будет принимать в качестве параметра объект вида {start: Number, end: Number, string: String} и обрезать строку из центра в соответствии со значениями start и end.
  * Например: cropString({start: 5, end: 5, string: 'r47qi8883jshdntkpy' }) => 'r47qi...ntkpy'
 */
-// Пока нет, буду пробовать еще.
+// const obj = {
+//     start: 5,
+//     end: 9,
+//     str: 'r47qi8883jshdntkpy',
+// }
+// const cropString = (obj) => {
+//     let str = obj.str.slice(obj.start, obj.end);
+//     let result = obj.str.replace(str, '...');
+//     return result;
+// };
+
+// console.log(cropString(obj));
