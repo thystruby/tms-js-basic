@@ -30,7 +30,23 @@
 // console.log (changeRegister(str))
 
 
+// const str = "Hello world"; 
 
+// function changeRegister(str) {
+//   let newStr= str.split('');
+//   newStr = newStr.map((i, index) => {
+//     if (i === str[index].toLowerCase()) {
+//         i = str[index].toUpperCase();
+//     } else {
+//         i = str[index].toLowerCase();
+//     }
+  
+//   return i;
+//   });
+//   return newStr.join('');
+// }
+
+// console.log (changeRegister(str))
 
 
 /**
@@ -148,12 +164,12 @@
 //         {name: 'Виктор', age: 40}
 //         ];
 
-//     const getAdult = () => {
+//     const getAdult = (arr) => {
 //         let user = arr.filter(item => item.age > 18)
 //         return user
 //         }
 
-// console.log (getAdult())
+// console.log (getAdult(arr))
 
 
 /**
@@ -164,7 +180,7 @@
 */
 
 // const arr = [1, 2, 3, 4 , "lesson" , "task"];
-// let a = 2;
+
 
 //     function getNumber(arr,a) {
 //         for(let i=0; i < arr.length; i++) {
@@ -175,7 +191,7 @@
 //         return -1
 //     }
     
-// console.log(getNumber(arr, a))
+// console.log(getNumber(arr, 2))
 
 /**
  * Задание 8
