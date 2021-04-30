@@ -16,13 +16,13 @@
  */
 
 
-/*for (let i = 0; i <= 15; i++) {
-    if (i % 2 == 0) {
-        alert(`${i} Это чётное число`)
-    } else {
-        alert(`${i} Это нечётное число`)
-    }
-}*/
+// for (let i = 0; i <= 15; i++) {
+//     if (i % 2 == 0) {
+//         console.log(`${i} Это чётное число`)
+//     } else {
+//         console.log(`${i} Это нечётное число`)
+//     }
+// }
 
 
 /**
@@ -34,60 +34,54 @@
  * если число кратное и 3 и 5 - то вывести FizzBuzz
  * Надо написать 2 варианта: с помощью цикла for и while
  */
-/*for (let i = 0; i <= 100; i++) {
-    if (i % 3 == 0) {
-        console.log(`${i} Fizz`)
-    }
-    if (i % 5 == 0) {
-        console.log(`${i} Buzz`)
-    }
-    if (i % 5 == 0 && i % 3 == 0) {
-        console.log(`${i} FizzBuzz`)
-    }
-}
+// for (let i = 1; i <= 100; i++) {
+//     if (i % 5 == 0 && i % 3 == 0) {
+//         console.log(`${i} FizzBuzz`)
+//     } else if (i % 3 == 0) {
+//         console.log(`${i} Fizz`)
+//     }
+//     if (i % 5 == 0) {
+//         console.log(`${i} Buzz`)
+//     }
+// }
 
 
-let i = 0;
-while (i <= 100)
-{
-    if (i % 3 == 0) {
-        console.log(`${i} Fizz`)
-    }
-    if (i % 5 == 0) {
-        console.log(`${i} Buzz`)
-    }
-    if (i % 5 == 0 && i % 3 == 0) {
-        console.log(`${i} FizzBuzz`)
-    }
-    i++;
-}*/
+// let i = 1;
+// while (i <= 100) {
+//     if (i % 5 == 0 && i % 3 == 0) {
+//         console.log(`${i} FizzBuzz`)
+//     }
+//     else if (i % 3 == 0) {
+//         console.log(`${i} Fizz`)
+//     }
+//     else if (i % 5 == 0) {
+//         console.log(`${i} Buzz`)
+//     }
+//     i++;
+// }
 
 /**
  * Задание 3
  * Написать цикл от 0 до 1000. Высчитать сумму всех чисел кратных 4 и сумму всех чисел кратных 3.
  */
-/*let sumOne = 0;
-let sumTWo = 0;
-for (let i = 0; i < 1000; i++){
-    if(i % 4 == 0){
-        sumOne += i;
-    }
-    if(i % 3 == 0){
-        sumTWo += i;
-    }
-}
-console.log(sumTWo + sumOne)*/
+// let sum = 0;
+// for (let i = 0; i <= 1000; i++) {
+//     if (i % 4 == 0 || i % 3 == 0) {
+//         sum += i;
+//     }
+// }
+// console.log(sum)
 
 
 /**
  * Задание 4
  * Напишите скрипт, который используя оператор while выведет все числа от 45 до 67.
  */
-/*let i = 45; 
-while (i <= 67) {
-  console.log(i)
-  i++
-}*/
+// let i = 45;
+// while (i <= 67) {
+//     console.log(i)
+//     i++
+// }
 
 /**
  * Задание 5*
@@ -101,20 +95,21 @@ while (i <= 67) {
 //***
 //****
 //*****
-/*let star = "*";
-for (let i = 0; i <= 5; i++ ){
-    console.log(star)
-    star+='*'
-}*/
+
+// let star = "";
+// for (let i = 0; i < 5; i++) {
+//     star += '*'
+//     console.log(star)
+// }
 
 /**
  * Задание 6
  * Написать функцию, которая будет принимать 2 аргумента и возвращать наименьшее их них
  */
-/*function argument(x,y) {
-     console.log(Math.min(x,y))
-    }
-argument(5,7)*/
+// function min(x, y) {
+//     console.log(Math.min(x, y))
+// }
+// min(10.1, 10)
 
 
 /**
@@ -124,22 +119,20 @@ argument(5,7)*/
  * В противном случае - error
  * success и error коллбэки оформите в качестве alert или console.log
  */
-
-
-/*function option(name, age) {
-    return {
-        name: "имя",
-        age: 'возраст',
-        }}
-    if (age > 18) {
-        console.log(succcess)
-    } else {
-        console.log(error)
-    }
-
-let user = option("john", 20);
-console.log(user.age)*/
-
+// function userData(user, success, error)
+// {
+//     if (user.age > 18){
+//         success(user);
+//     }
+//     else {
+//         error(user);
+//     }
+// }
+// userData(
+//     {name: 'Dmitrys', age: 10},
+//     (user) => { console.log(`${user.name} age > 18`); },
+//     (user) => { console.log(`${user.name} age < 18`); }
+// )
 
 /**
  * Задание 8
@@ -149,26 +142,44 @@ console.log(user.age)*/
  * Надо предусмотреть возможность вывода и обратного диапазона (если 'a' будет больше, чем 'b', то надо вывести цифры в порядке от 'b' до 'a')
  * Если числа равно, то надо вывести соответствующее сообщение.
  */
-//  /function diapason (a, b=30){
-//     if (!a){
+// function diapason(a, b = 30) {
+//     if (!a) {
 //         console.log("Error");
-        
+//         return
 //     }
-//     if(a>b){
-//         for (; a < b; b++)
-//         console.log(b)
+//     if (a == b) {
+//         console.log("Числа равны")
+//         return
 //     }
-//     else{; b < a;a++} {
-//         console.log(a)
+//     if (a > b) {
+//         [a, b] = [b, a];
+//     }
+//     for (let i = a; i <= b; i++){
+//         console.log(i);
 //     }
 // }
-// diapason(false,30)
+// diapason(11, 30)
 /**
  * Задание 9
  * Написать функцию, которая будет принимать в качестве аргумента объект, удалять все пустые ключи и возвращать этот объект.
  * Пример:
  * { name: 'John', city: 'Minsk', job: '' } => { name: 'Alex', city: 'Minsk' }
  */
+// function cleaner(user) {
+//     for (let key in user) {
+//         if (user[key] === '') {
+//             delete user[key];
+//         }
+//     }
+//     return user;
+// }
+// console.log(
+//     cleaner({
+//         name: 'John',
+//         city: 'Minsk',
+//         job: ''
+//     })
+// )
 
 
 /**
@@ -177,6 +188,16 @@ console.log(user.age)*/
  * Сделать проверку на существание ключа в объекте
  * Если ключ существует необходимо вернуть true, иначе - false
  */
+// function isObjectKeyExists(obj, key) {
+//     return key in obj;
+// }
+// console.log(
+//     isObjectKeyExists({
+//         name: 'John',
+//         city: 'Minsk',
+//         job: ''
+//     }, 'name')
+// )
 
 
 /**
@@ -184,3 +205,22 @@ console.log(user.age)*/
  * Создать объект типа {name: 'John', age: 42, city: 'Minsk'}
  * Клонируйте этот массив в новую переменную. Используйте 2 способа: Object.assign и цикл for in.
  */
+// let user = {
+//     name: 'John',
+//     city: 'Minsk',
+//     job: ''
+// };
+// console.log('Original object: ');
+// console.log(user);
+
+// let userClone = {};
+// Object.assign(userClone, user);
+// console.log('Object assign clone: ');
+// console.log(userClone);
+
+// let userCloneFor = {};
+// for (let key in user) {
+//     userCloneFor[key] = user[key];
+// }
+// console.log('Object for clone: ');
+// console.log(userCloneFor);
