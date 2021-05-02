@@ -13,6 +13,20 @@
  * Выведите через запятую "типы" этих переменных в консоль
 */
 
+// const n = 123;
+// const userName = "Egor";
+// const compare = 3 < 2;
+// const dayOfweek = null;
+// let day;
+
+// console.log(`${typeof n}, ${typeof userName}, ${typeof compare}, ${typeof dayOfweek}, ${typeof day}`);
+
+
+
+
+
+
+
 
 /**
  * Задание 2.
@@ -24,6 +38,11 @@
 */
 
 
+// const name = "John";
+// const admin = name;
+// alert(`Активный администратор: ` + admin);
+
+
 /** 
  * Задание 3.
  * Создайте константу с текстом "Привет"
@@ -31,9 +50,16 @@
  * Выводите в alert строку типа "[константа] [значение, введенное в prompt]"
 */
 
+// const hello = `Привет `;
+// const name = prompt(`Имя пользователя`);
+// alert(hello + name);
+
 
 /**
  * Задание 4.
  * Выведите confirm с текстом "Получить доступ?"
  * Выведите в alert значение, полученное из confirm 
 */
+
+// let logIn = confirm("Получить доступ?");
+// alert( logIn );
