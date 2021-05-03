@@ -3,14 +3,14 @@
  * Домашнее задание к занятию 5.
  * Код решения должен быть сразу же после описания задания.
  * Что бы у вас не выполнялся код всех заданий сразу перед тем, как приступить к следующему, предыдущее решение надо закомментировать.
-*/
+ */
 
 
 /**
  * Задание 1
  * Написать код, который заменит регистр каждого символа на противоположный
  * Например 'Hello world' -> 'hELLO WORLD'
-*/
+ */
 //готово 
 /*
 const str = 'Hello World';
@@ -32,28 +32,64 @@ console.log(newArr.join(''));
  * Проверка на запрещенное слово должна быть регистронезависимой
  * P.S. используйте map()
  * P.S.S. Строку необходимо разбить по символу пробела ' ' что бы получить массив слов
-*/
+ */
 
+//готово
+/*
+function textFilter(str, wrongWords) {
+  const strArray = str.split(' ');
+
+  const newstring = strArray.map((item) => {
+    if(wrongWords.includes(item)) {
+      return `${item[0]}***`
+    }
+    return item;
+  }).join(" ");
+  return newstring;
+}
+console.log(textFilter("I LOVE drugs", ['fuck', 'criminal', 'drugs', 'gun', 'stupid']));
+*/
 
 /**
  * Задание 3
  * Необходимо создать массив из 10 элементов. В массиве обязательно должны быть одинаковые значения
  * Напишите код который вернет массив повторяющихся элементов. Т.е. элементов, которые встречаются в изначальном массиве более одного раза
  * Пример: getRepeatingElements(["кришна", "кришна", "харе", "харе", 1]) => ["кришна", "харе"]
+ */
+
+
+/*
+let getRepeatingElements = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", 1];
+
+ let RepeatingElements = [];
+
+ const repeatingItem = getRepeatingElements.slice().sort();
+
+    for (let i = 0; i < repeatingItem.length; i++) {
+    if (repeatingItem[i] === repeatingItem[i + 1]) {
+      RepeatingElements.push(repeatingItem[i]);
+  };
+    };
+
+  console.log(RepeatingElements);
 */
 
+/*Задание 3new
+ * Необходимо создать массив из 10 элементов. В массиве обязательно должны быть одинаковые значения
+ * Напишите код который вернет массив уникальных элементов. Т.е. массив, который не содержит повторных значений
+ * Пример: getUniqueElements(["кришна", "кришна", "харе", "харе", 1]) => ["кришна", "харе", 1]
+ */
 
-/* не работает
+//готово
+/*
 let getRepeatingElements = ["Hare", "Krishna", "Hare", "Krishna",
-  "Krishna", "Krishna", "Hare", "Hare",];
- let RepeatingElements = getRepeatingElements.filter((item, index) => {
-    for (let i = 0; i < getRepeatingElements.length; i++) {
-    if (item[1] === item[+ 1]) {
-    return item;
-  };
-};
-});
-  console.log(RepeatingElements);
+  "Krishna", "Krishna", "Hare", "Hare", 1
+];
+
+let noRepeatingElements = [...new Set(getRepeatingElements)];
+
+console.log(noRepeatingElements);
 */
 
 /**
@@ -61,24 +97,26 @@ let getRepeatingElements = ["Hare", "Krishna", "Hare", "Krishna",
  * Напишите код, который проверит является строка палиндромом (слово, которое с обеих сторон читается одинаково) и вернет true либо false
  * Например 'репер', 'шалаш'
  * Пример: palindrome('репер') => true
-*/
+ */
 
-//не работает
-/*let string;
-let reverseString = string => string.split('').reverse('').join('');
-if (reverseString === string) {
-    console.log(`"palindrome ${reverseString} is true"`); 
+//готово 
+/*
+function isPalindrome(string) {
+  let reverseString = string.split('').reverse().join('');
+if (reverseString == string) {
+    console.log(`"${reverseString}" is a palindrome"`); 
 } else { 
   console.log("not");
 };
+};
+isPalindrome('шалаш');
 */
 
-  
 /**
  * Задание 5
  * Написать функцию которая отсортирует массив пользователей по возрасту сверху вниз
  * Пример: sortByAge([{name: 'Вася', age: 12}, {name: 'Маша', age: 27}, {name: 'Петя', age: 30}]) => [{name: 'Петя', age: 30}, {name: 'Маша', age: 27}, {name: 'Вася', age: 12}]
-*/
+ */
 //готово
 /*
 let users = [{name: 'Вася', age: 12}, {name: 'Маша', age: 27}, {name: 'Петя', age: 30}];
@@ -95,7 +133,7 @@ console.log(users[2].name);
  * Написать функцию, которая будет искать пользователей, у которых возраст больше 18 лет.
  * Пример: getAdult([{name: 'Вася', age: 12}, {name: 'Маша', age: 18}, {name: 'Петя', age: 16}, {name: 'Виктор', age: 40}]) => [{name: 'Маша', age: 18}, {name: 'Виктор', age: 40}]
  * Использовать метод filter/find
-*/
+ */
 //готово
 //вариант 1
 /*
@@ -115,27 +153,25 @@ console.log(getAdultChecked);
  * Написать функцию, которая принимает первым аргументом массив, а вторым любое значение.
  * Функция должна вернуть индекс если такое значение есть в массиве и -1 если его нет.
  * (indexOf, findIndex не использовать)
-*/
-// не работает
+ */
+// готово
 /*
-let line = [10, 20, 30, 40, 50];
-let number = 30;
-function getNumber() {
+function getNumber(line, number) {
   for(let i=0; i < line.length; i++)
-if(line[i] === number) {
-  console.log(line.indexOf(i));
+if(line[i] == number) {
+  console.log(line[i]);
 } else {
   console.log(-1)
 };
 };
-getNumber();
+getNumber([10, 20, 30, 40, 50], 30);
 */
 
 /**
  * Задание 8
  * Создать массив из 10 чисел. Необходимо высчитать сумму всех элементов
  * Используем reduce
-*/
+ */
 //готово 
 /*
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -150,7 +186,7 @@ console.log(sum);
  * Напишите код, который преобразовывает и объединяет все элементы массива в одно строковое значение.
  * Элементы массива будут разделены запятой.
  * Получите значения двумя разными способами: с помощью join и reduce
-*/
+ */
 //готово
 /*
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -163,9 +199,19 @@ console.log(str);
  * Задание 10.
  * Написать функцию, которая будет принимать в качестве параметра объект вида {start: Number, end: Number, string: String} и обрезать строку из центра в соответствии со значениями start и end.
  * Например: cropString({start: 5, end: 5, string: 'r47qi8883jshdntkpy' }) => 'r47qi...ntkpy'
-*/
+ */
+//готово 
 
-let cropString = function({start: Number, end: Number, string: String})
-{
-
+const obj = {
+  start: 3,
+  end: 5,
+  string: "r47qi8883jshdntkpy",
 }
+let newObj = function(objectToCrop) { 
+  
+const start = objectToCrop.string.slice(0, objectToCrop.start);
+const end = objectToCrop.string.slice(-objectToCrop.end);
+return start + "..." + end;
+}
+ 
+console.log(newObj(obj));
