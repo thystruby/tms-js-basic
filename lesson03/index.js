@@ -15,8 +15,8 @@
  * ...
 */
 let i = 0;
-while (i < 15) { 
-  alert( i );
+while (i <= 15) { 
+  console.log(i % 2);
   i++;
 }
 /**
@@ -28,12 +28,23 @@ while (i < 15) {
  * если число кратное и 3 и 5 - то вывести FizzBuzz
  * Надо написать 2 варианта: с помощью цикла for и while
 */
-for (let i = 0; i < 100; i++){
-   
+for (let i = 1; i <= 100; i++){
+  let r = '';
+  if (i % 3 === 0) { r += 'Fizz'; }
+  if (i % 5 === 0) { r += 'Buzz'; }
 
-        console.log(i);
-    }
+  if (r) { console.log(i, r); }
+}
 
+let i = 0;
+while (i <= 100) { 
+  let r = '';
+  if (i % 3 === 0) { r += 'Fizz'; }
+  if (i % 5 === 0) { r += 'Buzz'; }
+
+  if (r) { console.log(i, r); }
+  i++;
+}
 
 
 
@@ -41,21 +52,29 @@ for (let i = 0; i < 100; i++){
  * Задание 3
  * Написать цикл от 0 до 1000. Высчитать сумму всех чисел кратных 4 и сумму всех чисел кратных 3.
 */
+
+let k4 = 0;
+let k3 = 0;
 for (let i = 0; i <= 1000; i++) {
+  
   if (i % 4 == 0) {
-    alert( i );
+    k4 += i;
+  }
+  if (i % 3 == 0) {
+    k3 += i;
   }
 }
+console.log({k4, k3})
 
 /**
  * Задание 4
  * Напишите скрипт, который используя оператор while выведет все числа от 45 до 67.
 */
-let num;
-
+let num = 45;
 do {
-  num = prompt("Введите все числа от 45 до 67", 45);
-} while (num <= 67 && num);
+  console.log(num)
+  num += 1;
+} while (num < 67);
 
 /**
  * Задание 5*
@@ -83,7 +102,7 @@ for (i = 0; i < 5; i++ ) {
 */
 
 function fff(a,b) {
-  return Math.max(a,b);
+  return Math.min(a,b);
 }
 
 
@@ -97,32 +116,31 @@ function fff(a,b) {
  * success и error коллбэки оформите в качестве alert или console.log
 */
 
-const user = {};
 
+const user = {
+  name: 'Max',
+  age: 22
+ }
 
-const key = prompt('Введите ключ');
-const value = prompt('Введите значение ключа')
-
-const user = {};
-user[key] = value;
-console.log(user[key]);
-
-
-const checkAge = function(age, access, error) {
+const checkAge = function(user, access, error) {
   const limit = 18;
-  if(age > limit) {
-    access(age);
+  if(user.age > limit) {
+    access(user);
     return;
   }
-  error(limit);
+  error(user);
 }
-const showAcces = function(age) {
-
-  console.log(`Доступ открыт ${age}`)
+const showAcces = function(user) {
+  console.log(`Доступ открыт ${user.name}`)
 };
+const showErr = function(user) {
+  console.log(`Доступ zaкрыт ${user.name}`)
+};
+
 checkAge(
-  20,
-  showAcces 
+  user,
+  showAcces,
+  showErr
 )
 
 

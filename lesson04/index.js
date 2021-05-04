@@ -31,6 +31,9 @@ function User(name, surname) {
   }
 }
 
+const max = new User('Max', 'MaxsSurname')
+max.getFullName()
+
 /**
  * Задание 3
  * Создайте конструктор Animal который будет принимать 2 параметра: имя, голос, и переменную типа boolean - canFly
@@ -45,8 +48,8 @@ function Animal(name, voice, canfly) {
   this.name = name;
   this.voice = voice;
   this.canfly = canfly;
-  this.sayHi = () => { alert(`${this.name} говорит ${this.voice}`); }
-  this.fly = () => { alert(this.canfly === false ? `${this.name} не умеет летать` : `${this.name} умеет летать`); }
+  this.sayHi = () => { console.log(`${this.name} говорит ${this.voice}`); }
+  this.fly = () => { console.log(this.canfly === false ? `${this.name} не умеет летать` : `${this.name} умеет летать`); }
 }
 
 
@@ -113,6 +116,17 @@ function Animal(name, voice, canfly) {
  * Функция должна возвращать произведение всех элементов в заданном диапазоне.
  * Пример: range(1, 10) => 3628800. Что соответствует 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10
 */
+    
+function numb(One,Two) {
+  let numbMulti = One;
+  if(One <= Two) {
+    for(let i=One; i <= Two; i++) {
+    numbMulti *= i
+    }  
+  }
+  return numbMulti;
+  }
+  console.log(numb(1, 10));
 
 
 /**
@@ -124,8 +138,20 @@ function Animal(name, voice, canfly) {
  * В противном случае вызывать alert с текстом "No results found for your request"
  * Пример: findUser(data, 'BRUce') => {name: 'Bruce', age: 50}
 */
-
-
+const data = [
+  {name: 'John', age: 42},
+  {name: 'Ashton', age: 37},
+  {name: 'Bruce', age: 50}
+  ];
+  
+  let someUsers = data.find(item => item.name === 'Bruce')
+  let someUsers = data.find(item => item.name === 'Ashton')
+  let someUsers = data.find(item => item.name === 'John')
+  if (someUsers === undefined) {
+    alert("No results found for your request")
+    } else 
+    console.log(someUsers);
+  
 /**
  * Задание 10
  * Написать функцию, которая будет реализовывать следующий функционал
@@ -145,3 +171,29 @@ function Animal(name, voice, canfly) {
  * Зина - 3
  * ...
 */
+
+ const funn = [
+
+   {name: 'Вася', percent:80 },
+   {name: 'Зина', percent:77 },
+   {name: 'Катя', percent:88 },
+   {name: 'Петя', percent:95 },
+   {name: 'Вова', percent:57 },
+ ];
+
+
+ const newArr = [{},2].map((item) => {
+   if (item.percent >= 90) {
+     return '${item.name} -5'
+   }
+   if(item.percent >= 70) {
+     return '${item.name} - 3'
+   }
+   if(item.percent >= 80) {
+     return '${item.name} - 4'
+   }
+   if(item.percent >= 60) {
+     return '${item.name} - 2'
+   }
+ }) 
+ console.log(funn);
