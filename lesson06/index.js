@@ -29,8 +29,10 @@ test("Результат должен быть 5", calcSum(3, 2), 5);
 */
 
 function sumNumbers() {
-    return Array.from(arguments || []).reduce((acc, a) => acc + (Math.round(a) || 0), 0);
+    return [ ...arguments ].reduce((acc, a) => acc + (Math.round(a) || 0), 0);
 }
+
+sumNumbers(1,2,3);
  
 
 /**
@@ -118,7 +120,7 @@ equals = (a, b) => {
     for (key in a) {
         if (typeof a[key] !== typeof b[key]) { return false; }
         if (typeof a[key] === 'object' || typeof a[key] === 'array') { 
-            if (equals(a[key], b[key])) { continue; } else { return false;}
+            if (!equals(a[key], b[key])) { return false;}
         }
         if (typeof a[key] === 'number') {
             if (Number.isNaN(a[key]) && Number.isNaN(b[key])) { continue; }
