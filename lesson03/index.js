@@ -3,7 +3,7 @@
  * Домашнее задание к занятию 3.
  * Код решения должен быть сразу же после описания задания.
  * Что бы у вас не выполнялся код всех заданий сразу перед тем, как приступить к следующему, предыдущее решение надо закомментировать.
-*/
+ */
 
 /**
  * Задание 1
@@ -12,16 +12,14 @@
  * 0 это четное
  * 1 это нечетное
  * ...
-*/
+ */
 
-// let num = 0;
 // for (let i = 0; i < 16; i++) {
-//     if (i % 2 == 0) {
-//         console.log(`${num} это четное`);
+//     if (i % 2 === 0) {
+//         console.log(`${i} это четное`);
 //     } else {
-//         console.log(`${num} это не четное`);
+//         console.log(`${i} это не четное`);
 //     }
-//     num++;
 // }
 
 /**
@@ -32,28 +30,68 @@
  * если число кратное 5 - то вывести в консоль строку Buzz,
  * если число кратное и 3 и 5 - то вывести FizzBuzz
  * Надо написать 2 варианта: с помощью цикла for и while
-*/
+ */
 
+// for (let i = 1; i <= 100; i++) {
+//     if (i % 3 === 0) {
+//         console.log('Fizz');
+//         if (i % 5 === 0) {
+//             console.log('FizzBuzz');
+//         }
+//     } else if (i % 5 === 0) {
+//         console.log('Buzz');
+//     }
+// }
 
+// let i = 0;
+// while (i <= 100) {
+//     if (i % 3 === 0) {
+//         console.log('Fizz');
+//         if (i % 5 === 0) {
+//             console.log('FizzBuzz');
+//         }
+//     } else if (i % 5 === 0) {
+//         console.log('Buzz');
+//     }
+//     i++;
+// }
 
 /**
  * Задание 3
  * Написать цикл от 0 до 1000. Высчитать сумму всех чисел кратных 4 и сумму всех чисел кратных 3.
-*/
+ */
 
+// let i = 0;
+// let sum1 = 0;
+// let sum2 = 0;
+// while (i <= 1000) {
+//     if (i % 4 === 0) {
+//         sum1 += i;
+//     }
+//     if (i % 3 === 0) {
+//         sum2 += i;
+//     }
+//     i++;
+// }
+// console.log(sum1, sum2);
 
 /**
  * Задание 4
  * Напишите скрипт, который используя оператор while выведет все числа от 45 до 67.
-*/
+ */
 
+// let i = 45;
+// while (i < 68) {
+//     console.log(i);
+//     i++;
+// }
 
 /**
  * Задание 5
  * Нарисовать треугольник с помощью цикла.
  * Для рисования использовать символ *(звездочка) и консоль.
  * P.S. Для рисования при каждой итерации цикла необходимо добавлять к переменной один знак "*". Например let a = '*', на каждой итерации => a+='*'
-*/
+ */
 // Пример:
 //*
 //**
@@ -61,12 +99,19 @@
 //****
 //*****
 
+// let a = '';
+
+// for (let i = 0; i < 5; i++) {
+//     console.log(a += '*');
+// }
 
 /**
  * Задание 6
  * Написать функцию, которая будет принимать 2 аргумента и возвращать наименьшее их них
-*/
+ */
 
+// const smaller = (a, b) => (a < b) ? console.log(a) : console.log(b);
+// const smaller = (a, b) => console.log(Math.min(a, b));
 
 /**
  * Задание 7
@@ -74,7 +119,21 @@
  * Если возраст больше 18, то надо вызвать коллбэк succcess
  * В противном случае - error
  * success и error коллбэки оформите в качестве alert или console.log
-*/
+ */
+
+// function checkUser (user, a, b) {
+//     const limit = 18;
+//     let age = user.age;
+//     if (age > limit) {
+//         a();
+//     } else {
+//         b();
+//     }
+// }
+
+// const success = () => console.log('Доступ разрешен');
+// const error = () => console.log('Доступ запрещен');
+
 
 
 /**
@@ -84,7 +143,38 @@
  * Если нету аргумента 'a', то надо выводить ошибку
  * Надо предусмотреть возможность вывода и обратного диапазона (если 'a' будет больше, чем 'b', то надо вывести цифры в порядке от 'b' до 'a')
  * Если числа равно, то надо вывести соответствующее сообщение.
-*/
+ */
+
+// function range(a, b = 30) {
+//     if (!a) {
+//         console.log('Error');
+//     } else if (a === b){
+//         console.log(число равно ${b});
+//     } else {
+//         for (let i = Math.min(a, b); i <= Math.max(a, b); i++) {
+//             console.log(i);
+//         }
+//     }
+// }
+
+// function range(a, b = 30) {
+//     if (!a) {
+//         console.log('Error');
+//     } else if (a === b) {
+//         console.log(`the number is ${a}`);
+//     } else {
+//         difference(a, b);
+//     }
+// }
+
+// function difference(x, y) {
+//     let num1 = Math.min(x, y);
+//     let num2 = Math.max(x, y);
+//     while(num1 < num2) {
+//         console.log(num1);
+//         num1++;
+//     }
+// } 
 
 
 /**
@@ -92,19 +182,52 @@
  * Написать функцию, которая будет принимать в качестве аргумента объект, удалять все пустые ключи и возвращать этот объект.
  * Пример:
  * { name: 'John', city: 'Minsk', job: '' } => { name: 'Alex', city: 'Minsk' }
-*/
+ */
 
+// function clean(obj) {
+//     let newObj = {};
+//     for (var propName in obj) {
+//         if (obj[propName]) {
+//             newObj[propName] = obj[propName];
+//         }
+//     }
+//     console.log(newObj);
+// }
 
 /**
  * Задание 10
  * Написать функцию, которая будет принимать 2 аргумента: объект и ключ
  * Сделать проверку на существание ключа в объекте
  * Если ключ существует необходимо вернуть true, иначе - false
-*/
+ */
 
+// function keySearch(arr, key) {
+//     for (let x in arr) { 
+//         if (x === key) {
+//             console.log(true);
+//             return;
+//         }
+//     }
+//     console.log(false);
+// }
 
 /**
  * Задание 11
  * Создать объект типа {name: 'John', age: 42, city: 'Minsk'}
  * Клонируйте этот массив в новую переменную. Используйте 2 способа: Object.assign и цикл for in.
-*/
+ */
+
+
+
+// function cloneOne(object) {
+//     let newObj = {};
+//     Object.assign(newObj, object);
+//     return newObj;
+// }
+
+// function cloneTwo(object) {
+//     let newObj = {};
+//     for (let key in object) {
+//         newObj[key] = object[key];
+//     }
+// }
