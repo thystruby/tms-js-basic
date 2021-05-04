@@ -19,6 +19,29 @@
  * Пример: sumNumbers(1, 2, 3, 4, 'string', false, undefined, 5) => 15
 */
 
+/*
+const onlyNumbers = function(func) {
+    return function(...args) {
+        const filtered = args.filter((item) => {
+            if(!Number.isNaN(Number(item))) {
+                return item;
+            }
+        });
+        const result = func(...filtered);
+        return result;
+    }
+}
+function sum(...args) {
+    return args.reduce((total, current) => {
+        total += current;
+        return total;
+    }, 0)
+}
+
+const onlyNumbersSum = onlyNumbers(sum);
+
+console.log(onlyNumbersSum(1,2,3,4,'heelo', 'true', 'by', undefined, 5));
+*/
 
 /**
  * Задание 2
@@ -27,6 +50,15 @@
  * Пример: substract(a)(b) // a - b
 */
 
+/*
+function substrac(a) {
+    return (b) => {
+            return a - b 
+        }
+    }
+
+console.log(substrac(10)(12))
+*/
 
 /**
  * Задание 3
@@ -40,6 +72,19 @@
  * checkPassword('somePassword')
 */
 
+/*
+    function makePassword(somePassword) {
+      
+    return function checkPassword(chekedPassword) {
+    if (somePassword === chekedPassword) {
+        return true; 
+    } else {
+        return false;               
+    };
+};
+};
+    console.log(makePassword('123')('125'));
+*/
 
 /**
  * Задание 4
@@ -48,6 +93,16 @@
  * 'Минск' -> 'М'
 */
 
+/*
+function makeAbb(str) {
+  const strArr = str.split(' ');
+  const newArr = strArr.map((item) => {    
+  return item[0];
+}).join(" ");
+return newArr;
+};
+console.log(makeAbb("Написать функцию, которая из любой фразы сделает вернет ее абревиатуру"))     
+*/
 
 /**
  * Задание 5
@@ -60,6 +115,27 @@
 
 
 /**
+ * 
  * Задание 6
  * Написать функцию сравнения двух массивов, которая возвращает true или false в зависимости от того, одинаковые у них элементы или нет.
 */
+
+//пока не работает, подумаю
+let arr1 = [1, 2, 3, 4, 7];
+let arr2 = [1, 2, 3, 4, 5];
+function isIndentical() {
+    if (arr1.length === arr2.length) {
+      
+    for (let i = 0; i <= arr1.length; i++) {
+        if(arr1[i] === arr2[i]) {
+        return true;
+} else { 
+    return false;
+};
+};
+} else {
+    return false
+};
+
+};
+console.log(isIndentical(arr1, arr2));
