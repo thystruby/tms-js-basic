@@ -3,21 +3,21 @@
  * Домашнее задание к занятию 6.
  * Код решения должен быть сразу же после описания задания.
  * Что бы у вас не выполнялся код всех заданий сразу перед тем, как приступить к следующему, предыдущее решение надо закомментировать.
-*/
+ */
 
 
 /**
  * Задание 0
  * Написать функцию тестирования.
  * test("Результат должен быть 5", calcSum(3, 2), 5) => 'Результат должен быть 5: Успех';
-*/
+ */
 
 
 /**
  * Задание 1
  * Написать функцию, которая принимает произвольное количество параметров и возвращает сумму числовых элементов
  * Пример: sumNumbers(1, 2, 3, 4, 'string', false, undefined, 5) => 15
-*/
+ */
 
 /*
 const onlyNumbers = function(func) {
@@ -32,9 +32,10 @@ const onlyNumbers = function(func) {
     }
 }
 function sum(...args) {
-    return args.reduce((total, current) => {
+        return args.reduce((total, current) => {
         total += current;
         return total;
+        
     }, 0)
 }
 
@@ -48,7 +49,7 @@ console.log(onlyNumbersSum(1,2,3,4,'heelo', 'true', 'by', undefined, 5));
  * Сделать функцию, которая вычисляет разность между двумя числами и вернет разность.
  * Выполнить используя замыкание + каррирование, результат должен выглядеть примерно так
  * Пример: substract(a)(b) // a - b
-*/
+ */
 
 /*
 function substrac(a) {
@@ -70,7 +71,7 @@ console.log(substrac(10)(12))
  *
  * checkPassword('password') // возвращает false
  * checkPassword('somePassword')
-*/
+ */
 
 /*
     function makePassword(somePassword) {
@@ -91,7 +92,7 @@ console.log(substrac(10)(12))
  * Написать функцию, которая из любой фразы сделает вернет ее абревиатуру.
  * 'Республика беларусь' -> 'РБ'
  * 'Минск' -> 'М'
-*/
+ */
 
 /*
 function makeAbb(str) {
@@ -111,31 +112,28 @@ console.log(makeAbb("Написать функцию, которая из люб
  * Добавьте внутренний метод get(), который будет возвращать массив уже сгенерированных уникальных чисел
  * Добавьте метод clear() для отчистки массива
  * Все данные должны храниться внутри функции-конструктора.
-*/
+ */
 
 
 /**
  * 
  * Задание 6
  * Написать функцию сравнения двух массивов, которая возвращает true или false в зависимости от того, одинаковые у них элементы или нет.
-*/
+ */
 
-//пока не работает, подумаю
-let arr1 = [1, 2, 3, 4, 7];
-let arr2 = [1, 2, 3, 4, 5];
-function isIndentical() {
+/*
+let arrFirst = [1, 2, 3, 4, 5];
+let arrSecond = [1, 2, 3, 4, 5];
+
+function isIndentical(arr1, arr2) {
     if (arr1.length === arr2.length) {
-      
-    for (let i = 0; i <= arr1.length; i++) {
-        if(arr1[i] === arr2[i]) {
-        return true;
-} else { 
-    return false;
+        let result = arr1.every(function(element, index) {
+            return element === arr2[index]
+        });
+        return result
+    } else {
+        return false;
+    };
 };
-};
-} else {
-    return false
-};
-
-};
-console.log(isIndentical(arr1, arr2));
+console.log(isIndentical(arrFirst, arrSecond));
+*/
