@@ -10,19 +10,70 @@
  * Задание 1. Получить элемент с id="unordered_list" тремя способами. Сам элемент находится в файле index.html
 */
 
+/*const elem = document.querySelectorAll("#unordered_list"); 
+console.log(elem);
 
-/**
- * Задание 2. Изменить цвет каждого четного элемента (кроме элемента <h2>) в блоке с атрибутом name="text-container" на красный. HTML не изменять.
+const elem1 = document.getElementById("unordered_list");
+console.log(elem1);
+
+const bodyElem = document.body;
+const elem2 = bodyElem.childNodes;
+console.log(elem2);
 */
 
-
 /**
+ * Задание 2. Изменить цвет каждого четного элемента (кроме элемента <h2>) в блоке 
+ * с атрибутом name="text-container" на красный. 
+ * HTML не изменять.
+*/
+
+/*
+const elem1 = document.querySelectorAll("[name='text-container']");
+console.log(elem1);
+const noChange = elem1[0].querySelector("h2")
+console.log(noChange);
+Array.from(elem1[0].children).forEach(function(element, index, array) {
+  if (index % 2 === 0 && element !== noChange )
+   {
+    element.style.color = "red";
+  }    
+})
+*/
+// вариант 1
+/*
+const elem1 = document.querySelectorAll("[name='text-container']");
+console.log(elem1);
+const noChange = elem1[0].querySelector("h2")
+console.log(noChange);
+Array.from(elem1[0].children).forEach(function(element, index, array) {
+    if (index % 2 !== 0 && element !== noChange) {
+    element.style.color = "red";
+  }    
+})
+*/
+//вариант 2
+/*
+const elem1 = document.querySelector("[name='text-container']");
+Array.from(elem1.children).forEach(function(element, index, array) {
+  if (index % 2 !== 0 && element.tagName !== 'H2') {
+    element.style.color = "red";
+  }    
+})
+ */
+
+  /**
  * Задание 3. Запросите у пользователя имя через prompt(). Значение, введенное в prompt необходимо вывести в html.
  * Формат вывода:
  * 1) Создаем новый элемент div через JS
  * 2) Выполняем базовую стилизацию. Добавим зеленый бэкграунд и желтую обводку. Так же стоит задать паддинги в 30px
  * 3) Вставляем новый элемент в качестве ПОСЛЕДНЕГО элемента внутрь body, не забываем добавить значение полученное из prompt внутрь этого элемента
 */
+
+
+let div = document.createElement(div);
+div.className = "block";
+div.innerHTML = prompt('введите имя');
+
 
 
 /**
