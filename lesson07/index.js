@@ -14,6 +14,19 @@
 */
 
 
+
+// const calculator = () => {
+  
+//   let value = prompt('Ваше выражение');
+//   let func = new Function(`return ${value}`);
+
+//   return func;
+// }
+
+// alert(calculator()());
+
+
+
 /**
  * Задание 2
  * Создайте функцию-конструктор Stopwatch для секундомера
@@ -30,11 +43,52 @@
 */
 
 
+// function StopWatch() {
+//   this.current = 0;
+//   this.interval = 0;
+  
+//   this.start = function() {
+//     this.interval = setInterval(() => {
+//       this.current++;
+//       console.log(this.current);
+//     }, 1000);
+//   }
+//     this.stop = function() {
+//       clearInterval(this.interval);
+//   }
+//     this.clear= function() {
+//       this.current = 0;
+//       console.log(this.current);
+//       clearInterval(this.interval);
+//   }
+// }
+// const stopWatch = new StopWatch();
+// stopWatch.start();
+// setTimeout(() =>{stopWatch.stop()}, 4000);
+// setTimeout(() =>{stopWatch.start()}, 6000);
+// setTimeout(() =>{stopWatch.clear()}, 15000);
+
+
+
 /**
  * Задание 3
  * Напишите функию sumElements которая будет суммировать все аргументы функции
  * Напишите декоратор, который будет удалять все НЕ числовые аргументы и возвращать результат функции sumElements
 */
+
+
+function sumElements() {
+  if (!Number.isNaN(Number(arguments))) {
+    continue
+    }
+  
+  return [].reduce.call(arguments, function(a, b) {
+    return a + b;
+  });
+}
+
+
+console.log( sumElements(4, 5, 'first' , 6) );
 
 
 /**
