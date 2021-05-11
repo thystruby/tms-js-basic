@@ -49,8 +49,20 @@
  * Добавьте метод clear() для отчистки массива
  * Все данные должны храниться внутри функции-конструктора.
 */
-
-
+// const a = new Animal({from: 1, to: 10})
+// function An(obj) {
+//     this.arr = [];
+//     this.gen = function() {
+//         const number = '...'
+//         this.arr.push(number)
+//     }
+// this.get = function() {
+//     return this.arr;
+// }
+// this.clear = function() {
+//     this.arr = [];
+// }
+// }
 /**
  * Задание 6
  * Написать функцию сравнения двух массивов, которая возвращает true или false в зависимости от того, одинаковые у них элементы или нет.
