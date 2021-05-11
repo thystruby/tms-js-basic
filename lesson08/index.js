@@ -69,15 +69,20 @@ Array.from(elem1.children).forEach(function(element, index, array) {
  * 3) Вставляем новый элемент в качестве ПОСЛЕДНЕГО элемента внутрь body, не забываем добавить значение полученное из prompt внутрь этого элемента
 */
 
-
-let div = document.createElement(div);
-div.className = "block";
-div.innerHTML = prompt('введите имя');
-
+let info = prompt('введите имя');
+let div = document.createElement('div');
+div.className = 'block';
+div.innerHTML = info;
+document.body.append(div);
+div.style.cssText = `
+background: green;
+border: yellow;
+padding: 30px;
+`;
 
 
 /**
- * Задание 4. Заполните таблицу с классом my-table данными из объекта data. Таблицу уже есть в файле index.html
+ * Задание 4. Заполните таблицу с классом my-table данными из объекта data. Таблица уже есть в файле index.html
  * P.S. Проходимся по массиву и вставляем данные в таблицу. Один объект массива - один tr, свойство объекта - td.
  * P.S.S. Так же стоит вынести формирование tr в отдельную функцию
 */
