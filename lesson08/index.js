@@ -3,18 +3,63 @@
  * Домашнее задание к занятию 8.
  * Код решения должен быть сразу же после описания задания.
  * Что бы у вас не выполнялся код всех заданий сразу перед тем, как приступить к следующему, предыдущее решение надо закомментировать.
-*/
+ */
 
 
 /**
  * Задание 1. Получить элемент с id="unordered_list" тремя способами. Сам элемент находится в файле index.html
-*/
+ */
 
+/*const elem = document.querySelectorAll("#unordered_list"); 
+console.log(elem);
+
+const elem1 = document.getElementById("unordered_list");
+console.log(elem1);
+
+const bodyElem = document.body;
+const elem2 = bodyElem.childNodes;
+console.log(elem2);
+*/
 
 /**
- * Задание 2. Изменить цвет каждого четного элемента (кроме элемента <h2>) в блоке с атрибутом name="text-container" на красный. HTML не изменять.
-*/
+ * Задание 2. Изменить цвет каждого четного элемента (кроме элемента <h2>) в блоке 
+ * с атрибутом name="text-container" на красный. 
+ * HTML не изменять.
+ */
 
+/*
+const elem1 = document.querySelectorAll("[name='text-container']");
+console.log(elem1);
+const noChange = elem1[0].querySelector("h2")
+console.log(noChange);
+Array.from(elem1[0].children).forEach(function(element, index, array) {
+  if (index % 2 === 0 && element !== noChange )
+   {
+    element.style.color = "red";
+  }    
+})
+*/
+// вариант 1
+/*
+const elem1 = document.querySelectorAll("[name='text-container']");
+console.log(elem1);
+const noChange = elem1[0].querySelector("h2")
+console.log(noChange);
+Array.from(elem1[0].children).forEach(function(element, index, array) {
+    if (index % 2 !== 0 && element !== noChange) {
+    element.style.color = "red";
+  }    
+})
+*/
+//вариант 2
+/*
+const elem1 = document.querySelector("[name='text-container']");
+Array.from(elem1.children).forEach(function(element, index, array) {
+  if (index % 2 !== 0 && element.tagName !== 'H2') {
+    element.style.color = "red";
+  }    
+})
+ */
 
 /**
  * Задание 3. Запросите у пользователя имя через prompt(). Значение, введенное в prompt необходимо вывести в html.
@@ -22,17 +67,31 @@
  * 1) Создаем новый элемент div через JS
  * 2) Выполняем базовую стилизацию. Добавим зеленый бэкграунд и желтую обводку. Так же стоит задать паддинги в 30px
  * 3) Вставляем новый элемент в качестве ПОСЛЕДНЕГО элемента внутрь body, не забываем добавить значение полученное из prompt внутрь этого элемента
+ */
+/*
+let info = prompt('введите имя');
+let div = document.createElement('div');
+div.className = 'block';
+div.innerHTML = info;
+document.body.append(div);
+div.style.cssText = `
+background: green;
+border: yellow;
+padding: 30px;
+`;
 */
-
 
 /**
- * Задание 4. Заполните таблицу с классом my-table данными из объекта data. Таблицу уже есть в файле index.html
- * P.S. Проходимся по массиву и вставляем данные в таблицу. Один объект массива - один tr, свойство объекта - td.
- * P.S.S. Так же стоит вынести формирование tr в отдельную функцию
-*/
+ * Задание 4. Заполните таблицу с классом 
+ * my-table данными из объекта data. Таблица уже есть в файле index.html
+ * P.S. Проходимся по массиву и вставляем данные
+ * в таблицу. Один объект массива - один tr, 
+ * свойство объекта - td.
+ * P.S.S. Так же стоит вынести формирование tr 
+ * в отдельную функцию
+ */
 
-const data = [
-  {
+const data = [{
     name: 'John',
     age: 23,
     salary: '100000'
@@ -53,6 +112,36 @@ const data = [
     salary: '65200'
   }
 ];
+//let salaryTab = document.querySelectorAll('tr');
+//console.log(salaryTab);
+//for (let i = 0; i <= 3; i++) {
+//  salaryTab.insertAdjacentHTML('beforeend'); 
+//}
+
+
+// не работает
+let tr = document.querySelectorAll('tr');
+
+let tdPerson = function() {
+
+  let name = document.createElement('td')
+  let age = document.createElement('td')
+  let salary = document.createElement('td')
+
+  name.innerHTML = data.name;
+  age.innerHTML = data.age;
+  salary.innerHTML = data.salary;
+
+  td.insertAdjacentHTML("afterend");
+  return td; 
+};
+
+for (let i = 0; i <= data.length; i++) {
+tdPerson.insertAdjacentHTML('afterend'); 
+}
+
+
+
 
 /**
  * Задание 5. Написать функцию, которая будет доставать все данные из таблицы
@@ -66,4 +155,3 @@ const data = [
     ['Adam', '18', '65200'],
   ];
 */
-
