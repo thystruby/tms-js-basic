@@ -77,18 +77,19 @@
 */
 
 
-function sumElements() {
-  if (!Number.isNaN(Number(arguments))) {
-    continue
-    }
+// function sumElements() {
   
-  return [].reduce.call(arguments, function(a, b) {
-    return a + b;
-  });
-}
+//   return [].reduce.call(arguments, function(a, b) {
+//     if(typeof b !== 'number'){
+//          return a;
+//     }
+//     else{
+//       return a + b;
+//     }
+//   });
+// }
 
-
-console.log( sumElements(4, 5, 'first' , 6) );
+// console.log( sumElements(4, 5, 'first' , 6));
 
 
 /**
@@ -110,3 +111,29 @@ console.log( sumElements(4, 5, 'first' , 6) );
   const f = obj.sayHi
   f() => 'John'
 */
+
+// const obj = { 
+//   name: 'Kurt', 
+//   surname: 'Cobain',
+//   age: 27,
+//   sayRip() {
+//     console.log(`RIP ${this.name}!`);
+//   }
+// };
+
+
+// function rockstar(obj) {
+//   for (let key in obj) {
+//     if (typeof obj[key] == 'function') {
+//       obj[key] = obj[key].bind(obj);
+//     }
+//   }
+//   console.log(`${this.name} ${this.surname} kill himself in ${this.age}`);
+// }
+
+
+// const bindAll = rockstar.bind(obj);
+// bindAll(obj);
+// let sayRip = obj.sayRip;
+// sayRip();
+  
