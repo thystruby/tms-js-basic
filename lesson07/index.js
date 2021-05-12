@@ -14,6 +14,19 @@
 */
 
 
+
+// const calculator = () => {
+  
+//   let value = prompt('Ваше выражение');
+//   let func = new Function(`return ${value}`);
+
+//   return func;
+// }
+
+// alert(calculator()());
+
+
+
 /**
  * Задание 2
  * Создайте функцию-конструктор Stopwatch для секундомера
@@ -30,11 +43,53 @@
 */
 
 
+// function StopWatch() {
+//   this.current = 0;
+//   this.interval = 0;
+  
+//   this.start = function() {
+//     this.interval = setInterval(() => {
+//       this.current++;
+//       console.log(this.current);
+//     }, 1000);
+//   }
+//     this.stop = function() {
+//       clearInterval(this.interval);
+//   }
+//     this.clear= function() {
+//       this.current = 0;
+//       console.log(this.current);
+//       clearInterval(this.interval);
+//   }
+// }
+// const stopWatch = new StopWatch();
+// stopWatch.start();
+// setTimeout(() =>{stopWatch.stop()}, 4000);
+// setTimeout(() =>{stopWatch.start()}, 6000);
+// setTimeout(() =>{stopWatch.clear()}, 15000);
+
+
+
 /**
  * Задание 3
  * Напишите функию sumElements которая будет суммировать все аргументы функции
  * Напишите декоратор, который будет удалять все НЕ числовые аргументы и возвращать результат функции sumElements
 */
+
+
+// function sumElements() {
+  
+//   return [].reduce.call(arguments, function(a, b) {
+//     if(typeof b !== 'number'){
+//          return a;
+//     }
+//     else{
+//       return a + b;
+//     }
+//   });
+// }
+
+// console.log( sumElements(4, 5, 'first' , 6));
 
 
 /**
@@ -56,3 +111,29 @@
   const f = obj.sayHi
   f() => 'John'
 */
+
+// const obj = { 
+//   name: 'Kurt', 
+//   surname: 'Cobain',
+//   age: 27,
+//   sayRip() {
+//     console.log(`RIP ${this.name}!`);
+//   }
+// };
+
+
+// function rockstar(obj) {
+//   for (let key in obj) {
+//     if (typeof obj[key] == 'function') {
+//       obj[key] = obj[key].bind(obj);
+//     }
+//   }
+//   console.log(`${this.name} ${this.surname} kill himself in ${this.age}`);
+// }
+
+
+// const bindAll = rockstar.bind(obj);
+// bindAll(obj);
+// let sayRip = obj.sayRip;
+// sayRip();
+  
