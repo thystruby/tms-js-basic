@@ -25,6 +25,22 @@
 
 // console.log (sumNumbers(1, 2, 3, 4, 'string', false, undefined, 5))
 
+
+// const sumNumbers = (...args) => {
+//     let sum = args.reduce((acc, current) => {
+//         if (typeof current !== 'number') {
+//             return acc;
+//         }
+//         else {
+//             return acc + current;
+//         }
+//     }, 0)
+//     return sum
+// }
+
+// console.log(sumNumbers('reactOne', 1, 2, 3, 4, 'react', 5))
+
+
 /**
  * Задание 2
  * Сделать функцию, которая вычисляет разность между двумя числами и вернет разность.
@@ -87,10 +103,23 @@
 // }
 
 // console.log(getAbbreviation('united states america'));
+
+// const getAbbreviation = (args) => {
+//     let abbr = args.split(' ');
+//     abbr = abbr.reduce((acc, current) => {
+//         return acc + current[0].toUpperCase()
+//     }, '');
+
+//     return abbr;
+// }
+
+// console.log(getAbbreviation('Республика беларусь'))
+
+
 /**
  * Задание 5
- * Сделайте функцию-конструктор с 2-я методами и которая принимает в качестве аргумента объект {from: Number, to: Number} 
- * При вызове метода generate() каждый вызов будет генерировать случайное числа от 'from' до 'to' и класть в массив. Число округлять до 3-х знаков после запятой 
+ * Сделайте функцию-конструктор с 2-я методами и которая принимает в качестве аргумента объект {from: Number, to: Number}
+ * При вызове метода generate() каждый вызов будет генерировать случайное числа от 'from' до 'to' и класть в массив. Число округлять до 3-х знаков после запятой
  * Добавьте внутренний метод get(), который будет возвращать массив уже сгенерированных уникальных чисел
  * Добавьте метод clear() для отчистки массива
  * Все данные должны храниться внутри функции-конструктора.
@@ -98,31 +127,31 @@
 
 
 // const range = {
-//     from : 1,
+//     from: 1,
 //     to: 10,
-//  }
+// }
 
 // function CheckNumbers(range) {
 //     this.range = range;
 //     let arr = [];
-  
-//     this.generate = function() {
-//       arr.push((Math.random() * (this.range.to - this.range.from) + this.range.from).toFixed(3))
+
+//     this.generate = function () {
+//         arr.push((Math.random() * (this.range.to - this.range.from) + this.range.from).toFixed(3));
 //     };
 
-//    this.get = function() {
-//        return arr
-//    }
-    
-//    this.clear = function() {
-//         arr.splice(0, arr.length);
-//    }
-  
+//     this.get = function () {
+//         return arr;
+//     }
+
+//     this.clear = function () {
+//         arr = [];
+//     }
+
 // };
 
 //   let rangeTwo = new CheckNumbers(range);
-  
-  
+
+
 //   rangeTwo.generate()
 //   rangeTwo.generate()
 //   console.log (rangeTwo.get())
@@ -159,14 +188,14 @@
 
 // function makeCounter() {
 //     let currentCount = 1;
-    
+
 //     return function() { 
 //       return Math.pow(currentCount++, 2);
 //     };
 //   }
-  
+
 //   const counter = makeCounter(); 
-  
+
 // counter ()
 // counter ()
 // console.log(counter())
