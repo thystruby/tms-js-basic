@@ -23,8 +23,7 @@
  * 2) Выполняем базовую стилизацию. Добавим зеленый бэкграунд и желтую обводку. Так же стоит задать паддинги в 30px
  * 3) Вставляем новый элемент в качестве ПОСЛЕДНЕГО элемента внутрь body, не забываем добавить значение полученное из prompt внутрь этого элемента
 */
-<<<<<<< HEAD
-=======
+
 const bnt  = document.querySelector("button");
 const ppp  = document.querySelector("p");
 
@@ -33,7 +32,6 @@ bnt.addEventListener("click",function() {
   body.insertAdjacentHTML('beforeend', `<p> ваше имя ${p}</p>`);
 }
 )
->>>>>>> master
 
 
 /**
@@ -65,8 +63,7 @@ const data = [
   }
 ];
 
-<<<<<<< HEAD
-=======
+
 const tableBody = document.querySelector('tbody');
 
 const getrow = (data) => {
@@ -84,8 +81,6 @@ for (let i = 0 ; i < data.length; i++) {
     
   }
 
-
->>>>>>> master
 /**
  * Задание 5. Написать функцию, которая будет доставать все данные из таблицы
  * На вход в эту функцию мы должны передавать DOM элемент таблицы.
@@ -99,8 +94,7 @@ for (let i = 0 ; i < data.length; i++) {
   ];
 */
 
-<<<<<<< HEAD
-=======
+
 const table = document.querySelector('table');
 
 parseTble(table);
@@ -157,5 +151,3 @@ opn.addEventListener("click",function() {
   
 }
 )
-
->>>>>>> master
