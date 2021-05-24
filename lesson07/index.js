@@ -56,3 +56,30 @@
   const f = obj.sayHi
   f() => 'John'
 */
+
+
+
+
+const input = document.querySelector('input');
+const button = document.querySelector('button');
+const div = document.querySelector('div');
+
+const LS_KEY = 'INPUT_TEST';
+const lsData = localStorage.getItem(LS_KEY);
+let arr = [];
+
+if(lsData) {
+  arr = JSON.parse(lsData);
+}
+
+arr.forEach((element) => {
+  div.insertAdjacentHTML('beforeend', `<div>${element}</div>`)
+});
+
+button.addEventListener('click', () => {
+  arr.push(input.value);
+  localStorage.setItem(LS_KEY, JSON.stringify(arr))
+  div.insertAdjacentHTML('beforeend', `<div>${input.value}</div>`)
+});
+
+
