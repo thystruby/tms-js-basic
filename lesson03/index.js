@@ -14,11 +14,8 @@
  * 1 это нечетное
  * ...
 */
-let i = 0;
-while (i <= 15) { 
-  console.log(i % 2);
-  i++;
-}
+
+
 /**
  * Задание 2
  * Написать цикл, который будет итерироватся от 1 до 100.
@@ -28,24 +25,6 @@ while (i <= 15) {
  * если число кратное и 3 и 5 - то вывести FizzBuzz
  * Надо написать 2 варианта: с помощью цикла for и while
 */
-for (let i = 1; i <= 100; i++){
-  let r = '';
-  if (i % 3 === 0) { r += 'Fizz'; }
-  if (i % 5 === 0) { r += 'Buzz'; }
-
-  if (r) { console.log(i, r); }
-}
-
-let i = 0;
-while (i <= 100) { 
-  let r = '';
-  if (i % 3 === 0) { r += 'Fizz'; }
-  if (i % 5 === 0) { r += 'Buzz'; }
-
-  if (r) { console.log(i, r); }
-  i++;
-}
-
 
 
 /**
@@ -53,34 +32,18 @@ while (i <= 100) {
  * Написать цикл от 0 до 1000. Высчитать сумму всех чисел кратных 4 и сумму всех чисел кратных 3.
 */
 
-let k4 = 0;
-let k3 = 0;
-for (let i = 0; i <= 1000; i++) {
-  
-  if (i % 4 == 0) {
-    k4 += i;
-  }
-  if (i % 3 == 0) {
-    k3 += i;
-  }
-}
-console.log({k4, k3})
 
 /**
  * Задание 4
  * Напишите скрипт, который используя оператор while выведет все числа от 45 до 67.
 */
-let num = 45;
-do {
-  console.log(num)
-  num += 1;
-} while (num < 67);
+
 
 /**
- * Задание 5*
+ * Задание 5
  * Нарисовать треугольник с помощью цикла.
  * Для рисования использовать символ *(звездочка) и консоль.
- * P.S. Для рисования при каждой итерации цикла необходимо добавлять к переменной один знак "*"
+ * P.S. Для рисования при каждой итерации цикла необходимо добавлять к переменной один знак "*". Например let a = '*', на каждой итерации => a+='*'
 */
 // Пример:
 //*
@@ -89,23 +52,11 @@ do {
 //****
 //*****
 
-let m = '*'
-
-for (i = 0; i < 5; i++ ) {
-  console.log(m);
-  m += '*';
-}
 
 /**
  * Задание 6
  * Написать функцию, которая будет принимать 2 аргумента и возвращать наименьшее их них
 */
-
-function fff(a,b) {
-  return Math.min(a,b);
-}
-
-
 
 
 /**
@@ -117,33 +68,6 @@ function fff(a,b) {
 */
 
 
-const user = {
-  name: 'Max',
-  age: 22
- }
-
-const checkAge = function(user, access, error) {
-  const limit = 18;
-  if(user.age > limit) {
-    access(user);
-    return;
-  }
-  error(user);
-}
-const showAcces = function(user) {
-  console.log(`Доступ открыт ${user.name}`)
-};
-const showErr = function(user) {
-  console.log(`Доступ zaкрыт ${user.name}`)
-};
-
-checkAge(
-  user,
-  showAcces,
-  showErr
-)
-
-
 /**
  * Задание 8
  * Написать функцию, которая выведет в консоль числа из диапазона от 'a' до 'b'
@@ -153,36 +77,14 @@ checkAge(
  * Если числа равно, то надо вывести соответствующее сообщение.
 */
 
-function sss(a, b = 30) {
-  if (typeof a === 'undefined') { throw new Error('argument is required');}
-  let j = Math.min(a,b);
-  let k = Math.max(a,b);
-  if (j == k) {
-    console.log('a = b');
-    return;
-  }
-  for (let i = j; i <= k; i++) {
-    console.log(i);
-  }
-}
-
-// ...конец, потому что теперь i == 3
 
 /**
  * Задание 9
  * Написать функцию, которая будет принимать в качестве аргумента объект, удалять все пустые ключи и возвращать этот объект.
  * Пример:
- * { name: 'John', city: 'Minsk', job: '' } => { name: 'Alex', city: 'Minsk' }
+ * { name: 'John', city: 'Minsk', job: '' } => { name: 'John', city: 'Minsk' }
 */
-let getUser = obj => {
-  let newObj = {};
-  (Object.keys(obj)).forEach(key => {
-    if (!!obj[key]) {
-      newObj[key] = obj[key];
-    }
-  });
-  return newObj;
-}
+
 
 /**
  * Задание 10
@@ -191,18 +93,9 @@ let getUser = obj => {
  * Если ключ существует необходимо вернуть true, иначе - false
 */
 
-let ffff = (obj, key) => {
-  return Object.keys(obj).includes(key);
-}
 
 /**
  * Задание 11
  * Создать объект типа {name: 'John', age: 42, city: 'Minsk'}
- * Клонируйте этот массив??????? в новую переменную. Используйте 2 способа: Object.assign и цикл for in.
+ * Клонируйте этот массив в новую переменную. Используйте 2 способа: Object.assign и цикл for in.
 */
-
-let o = {name: 'John', age: 42, city: 'Minsk'};
-let o2 = {};
-for (key in o) {
-  Object.assign(o2, {[key]: o[key]})
-}

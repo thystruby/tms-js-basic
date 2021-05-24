@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+  <!-- Блоки, которые отмечена как COMPONENT необходимо выносить в отдельный JS файл. Используем их в таком случае прямо из JS. Т.е. по необходимости вставляем  -->
+  <h1 class="title">
+    Weather App
+  </h1>
+  <!-- Значение даты получаем из new Date(Date.now()). Методы: getDate, getMonth, getFullYear -->
+  <!-- P.S. обратите внимание, что getMonth стартует в нуля) -->
+  <h1 class="date">
+    Today: 11.05.2021
+  </h1>
+  <!-- ЗАДАНИЕ НА КОМПОНЕНТЫ: Этот компонент должен отображаться сразу при загрузке страницы -->
+  <div class="container" data-component>
+    <div class="input-container">
+      <!-- Когда происходит запрос к API необходимо добавлять аттрибут disabled к input и button что бы предотвратить другие запросы -->
+      <!-- После того, как запрос пройдет, атрибуты disabled необходимо удалить -->
+      <input class="input" placeholder="Enter city or country name" type="text" />
+      <button class="button">Search</button>
+      <!-- ДОПОЛНИТЕЛЬНОЕ ЗАДАНИЕ: Реализовать поиск по геолокации. -->
+      <!-- Для получения информации о геолокации необходимо по клику на кнопку вызвать метод navigator.geolocation.getCurrentPosition((value) => {}) -->
+      <!-- В качестве первого аргумента этот метод принимает функцию succces, второй параметр это функция error -->
+      <!-- Функция success в качестве аргумента принимает value. При успешном выполнении внутри этого value будет объект coords, который содержит поля latitude м longitude  -->
+      <!-- По этим координатам необходимо делать запрос к API /current. Надо посмотреть в документации, каким образом можно выполнить запрос по географическим координатам, там это есть -->
+      <!-- При нажатии на кнопку должно появиться системное браузерное окно, которое запросит разрешение на доступ к геопозиции -->
+      <!-- При выволнении запроса по геокоординатам флоу остается такой же, инпут и кнопки необходимо блокировать, потом отображать loader и т.д.  -->
+      <button class="button button-geolocation">
+        <img src="./images/map.svg" alt="Geolocation">
+      </button>
+    </div>
+    <!-- В случае ошибки выводим текст message в этот блок. В противном случае он отображаться в HTML не должен. -->
+    <div class="error">Oops, Something Went Wrong.</div>
+  </div>
+  <!-- До того момента, пока пользователь не введет что-нибудь в input и не нажмет search, никаких блоков под ним быть не должно. -->
+  <!-- Т.е. изначальное состояние вашего приложения это заголовок и блок с инпутом. -->
+  <div class="container container-main" data-component>
+    <!-- Когда происходит запрос на сервер, необходимо отображать loader. -->
+    <!-- <img src="./images/loading.svg" class="loader"></img> -->
+    <div class="main-body">
+      <div class="main-info" data-component >
+        <div class="city">
+          <span class="uppercase">Minsk</span> 
+          <span class="type">Light rain</span>
+        </div>
+        <!-- цифра 02d перед @2x.png это ID иконки из поля weather[0].icon. Т.е. на основе этого ID надо строить подобный URL и вставлять его в img.src -->
+        <img class="icon" src="http://openweathermap.org/img/wn/02d@2x.png" />
+        <div class="temp">
+          <div class="temp-value">
+            <!-- В зависимости от типы температуры (цельсий/фаренгейт) надо отображать тут это значение. По умолчанию с API мы получаем значение в цельсиях.  -->
+            <!-- Значение округляем с помощью Math.round() -->
+            <div>17</div> 
+            <div class="temp-controls">
+              <!-- Надо сделать переключение между цельсиями и фаренгейтами. Формулу погуглите :)  -->
+              <!-- Активное значение (цельсии или фаренгейты) наверное стоит хранить в localStorage -->
+              <button class="temp-type temp-type-active">°C</button>
+              <span>|</span>
+              <button class="temp-type">°F</button>
+            </div>
+          </div>
+          <!-- Тут так же надо сделать переключание между цельсиями/фаренгейтами -->
+          <div>(min. 8 °C / max. 22 °C)</div> 
+        </div>
+      </div>
+      <div class="info" data-component>
+        <!-- Если API не возвращает какие-либо поле, то нужно выставлять значение '0' -->
+        <!-- ЗАДАНИЕ НА КОМПОНЕНТЫ: Тут есть смысл сделать 1 компонент на все эти блоки. Думаю эта функция будет принимать 3 аргумента label, value, postfix -->
+        <!-- Например для блока Wind вызов функции будет выглядеть так: infoRow('Wind', '1.5', 'm/s')  -->
+        <div class="info-row" data-component>
+          <div class="info-row-label">Wind</div>
+          <div class="info-row-value">1.5 m/s</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Humidity</div>
+          <div class="info-row-value">66%</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Pressure</div>
+          <div class="info-row-value">1021.2 mb</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Clound</div>
+          <div class="info-row-value">5%</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Sunrise</div>
+          <div class="info-row-value">08:45</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Sunset</div>
+          <div class="info-row-value">20:58</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Visibility</div>
+          <div class="info-row-value">10 km</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Rain</div>
+          <div class="info-row-value">0.56 mm</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container container-forecast" data-component="">
+    <div class="container-title">16-day forecast</div>
+    <!-- Запрос к forecast возвращает массив дней list. У элементов этого массива есть поле dt, которое указывает дату. Это время в секундах. -->
+    <!-- Его надо умножить на 1000 что бы получить миллисекунды, потом это значение можно использовать в new Date(). Прим.: new Date(dt * 1000) -->
+    <div class="forecast">
+      <!-- ЗАДАНИЕ НА КОМПОНЕНТЫ: Все элементы этого списка являются одним компонентом который принимает в качестве аргумента дату, состояние погоды, id иконки и максимальную/минимальную температуру -->
+      <div class="forecast-item" data-component>
+        <div class="fotecast-item-date">Today</div>
+        <div class="fotecast-item-type">Clouds</div>
+        <img class="forecast-item-icon" src="http://openweathermap.org/img/wn/02d@2x.png"></img>
+        <div class="forecast-item-temp">17 °C / 8 °C</div>
+      </div>
+      <div class="forecast-item">
+        <div class="fotecast-item-date">Mon, May 16</div>
+        <div class="fotecast-item-type">Clouds</div>
+        <img class="forecast-item-icon" src="http://openweathermap.org/img/wn/02d@2x.png"></img>
+        <div class="forecast-item-temp">17 °C / 8 °C</div>
+      </div>
+      <div class="forecast-item">
+        <div class="fotecast-item-date">Tue, May 17</div>
+        <div class="fotecast-item-type">Clouds</div>
+        <img class="forecast-item-icon" src="http://openweathermap.org/img/wn/02d@2x.png"></img>
+        <div class="forecast-item-temp">17 °C / 8 °C</div>
+      </div>
+      <div class="forecast-item">
+        <div class="fotecast-item-date">Wed, May 12</div>
+        <div class="fotecast-item-type">Clouds</div>
+        <img class="forecast-item-icon" src="http://openweathermap.org/img/wn/02d@2x.png"></img>
+        <div class="forecast-item-temp">17 °C / 8 °C</div>
+      </div>
+      <div class="forecast-item">
+        <div class="fotecast-item-date">Thu, May 13</div>
+        <div class="fotecast-item-type">Clouds</div>
+        <img class="forecast-item-icon" src="http://openweathermap.org/img/wn/02d@2x.png"></img>
+        <div class="forecast-item-temp">17 °C / 8 °C</div>
+      </div>
+      <div class="forecast-item">
+        <div class="fotecast-item-date">Fri, May 14</div>
+        <div class="fotecast-item-type">Clouds</div>
+        <img class="forecast-item-icon" src="http://openweathermap.org/img/wn/02d@2x.png"></img>
+        <div class="forecast-item-temp">17 °C / 8 °C</div>
+      </div>
+      <div class="forecast-item">
+        <div class="fotecast-item-date">Sat, May 15</div>
+        <div class="fotecast-item-type">Clouds</div>
+        <img class="forecast-item-icon" src="http://openweathermap.org/img/wn/02d@2x.png"></img>
+        <div class="forecast-item-temp">17 °C / 8 °C</div>
+      </div>
+      <div class="forecast-item">
+        <div class="fotecast-item-date">Sun, May 16</div>
+        <div class="fotecast-item-type">Clouds</div>
+        <img class="forecast-item-icon" src="http://openweathermap.org/img/wn/02d@2x.png"></img>
+        <div class="forecast-item-temp">17 °C / 8 °C</div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/index.js" type="module"></script>
+</body>
+</html>

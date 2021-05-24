@@ -25,7 +25,7 @@
  * stopwatch.start() => Выводит каждую секунду новое значение в консоль
  * setTimeout(() => stopwatch.stop(), 3000) => Через 3 секунды останавливаем секундомер
  * setTimeout(() => stopwatch.start(), 6000) => Через 6 секунд запускаем секундомер, отсчет должен продолжиться с того места, на котором остановился в прошлый раз
- * setTimeout(() => stopwatch.start(), 15000) => Через 15 секунд сбрасываем секундомет, очищает счетчик и останавливаем интервал
+ * setTimeout(() => stopwatch.clear(), 15000) => Через 15 секунд сбрасываем секундомер, очищаем счетчик и останавливаем интервал
  * P.S. Можете попробовать использовать не setInterval, а рекурсивный setTimeOut
 */
 
@@ -57,5 +57,32 @@
   f() => 'John'
 */
 
-// TODO Добавить еще несколько заданий
+
+
+
+
+const input = document.querySelector('input');
+const button = document.querySelector('button');
+const div = document.querySelector('div');
+
+const LS_KEY = 'INPUT_TEST';
+const lsData = localStorage.getItem(LS_KEY);
+let arr = [];
+
+if(lsData) {
+  arr = JSON.parse(lsData);
+}
+
+arr.forEach((element) => {
+  div.insertAdjacentHTML('beforeend', `<div>${element}</div>`)
+});
+
+button.addEventListener('click', () => {
+  arr.push(input.value);
+  localStorage.setItem(LS_KEY, JSON.stringify(arr))
+  div.insertAdjacentHTML('beforeend', `<div>${input.value}</div>`)
+});
+
+
+
 
