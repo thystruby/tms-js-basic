@@ -60,7 +60,7 @@
 
 
 
-const input = document.querySelector('input');
+/*const input = document.querySelector('input');
 const button = document.querySelector('button');
 const div = document.querySelector('div');
 
@@ -80,6 +80,28 @@ button.addEventListener('click', () => {
   arr.push(input.value);
   localStorage.setItem(LS_KEY, JSON.stringify(arr))
   div.insertAdjacentHTML('beforeend', `<div>${input.value}</div>`)
-});
+});*/
 
 
+
+/*
+class Rabbit extends Animal {
+  constructor ('name','color','jump') {
+    super ('name','color')
+    this.jump = jump;
+  }
+
+}
+class wolf extends Animal {
+  constructor ('name','color','jump') {
+    super ('name','color')
+    this.jump = jump;
+  }
+
+ let Rabbit = new Rabbit ('Белый кролик ',',белый','прыгает')
+ let Wolf = new Wolf ('Серый волк ',',серый','кусает')
+
+ console.log(Rabbit);
+ console.log(Wolf);
+
+} */

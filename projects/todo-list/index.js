@@ -13,28 +13,82 @@ function generateUniqID() {
 
 
 
+// LOCAL STORAGE !!!
+const arr = [];
+const STORAGE_KEY = 'TODOS';
 
-const input = document.querySelector('input');
-const button = document.querySelector('button');
-const div = document.querySelector('div');
+const input = document.querySelector('.ui.action input');
+const btn = document.querySelector('.ui.button');
+const todoList = document.querySelector('.list');
 
-const LS_KEY = 'INPUT_TEST';
-const lsData = localStorage.getItem(LS_KEY);
-let arr = [];
+const deleteTodoButtons = document.getElementsByClassName('negative ui button');
 
-if(lsData) {
-  arr = JSON.parse(lsData);
+const handleDeleteTodo = (event) => {
+  const todoElement = event.target.closest('.todo');
+  todoElement.remove();
+  // UPDATE LOCAL STORAGE!!!!
 }
 
-arr.forEach((element) => {
-  div.insertAdjacentHTML('beforeend', `<div>${element.text}</div>`)
-});
+for (const deleteButton of deleteTodoButtons) {
+  deleteButton.addEventListener('click', handleDeleteTodo);
+};
 
-button.addEventListener('click', () => {
-  arr.push({
-      text: input.value,
-      completed: false
-  });
-  localStorage.setItem(LS_KEY, JSON.stringify(arr))
-  div.insertAdjacentHTML('beforeend', `<div>${input.value}</div>`)
+const getStorageData = () => {
+  const data = localStorage.getItem(STORAGE_KEY);
+  return JSON.parse(data);
+};
+
+const setStorageData = (value) => {
+  if(value instanceof Array) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(value))
+  } else {
+    alert('Wrong type')
+  }
+};
+
+// IIFE. Initialize
+(()=>{
+  const data = getStorageData();
+  if(!data) {
+    setStorageData([]);
+  }
+})();
+
+const getTodoHTML = ({id, name, done}) => {
+  return `
+    <div class="todo" data-id="${id}">
+      <label class="checkbox">
+        <input type="checkbox" ${done ? 'checked' : ''} />
+        <div class="checkbox-icon"></div>
+      </label>
+      <span class="text">${name}</span>
+      <button class="negative ui button">Удалить</button>
+      <button class="circular ui icon button button-edit">
+        <i class="icon cog"></i>
+      </button>
+    </div>
+  `;
+}
+
+btn.addEventListener('click', () => {
+  const value = input.value;
+  const data = {
+    id: generateUniqID(),
+    name: value,
+    done: false
+  };
+  // LocalStorage?
+  arr.push(data);
+  const newTodo =  getTodoHTML(data);
+  todoList.insertAdjacentHTML('afterbegin', newTodo);
+
+  // Получаем новый элемент
+  const currentTodo = document.querySelector(`[data-id="${data.id}"]`);
+
+  // Для кнопки "Удалить" нового элемента добавляем лисенер
+  const currentTodoDeleteButton = currentTodo.querySelector('.negative.ui.button');
+  currentTodoDeleteButton.addEventListener('click', handleDeleteTodo);
+  // Edit button?
+
+  input.value = '';
 });
