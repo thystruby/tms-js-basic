@@ -14,24 +14,86 @@ function generateUniqID() {
 
 
 // LOCAL STORAGE !!!
-const arr = [];
+let arr = [];
 const STORAGE_KEY = 'TODOS';
 
 const input = document.querySelector('.ui.action input');
 const btn = document.querySelector('.ui.button');
 const todoList = document.querySelector('.list');
 
-const deleteTodoButtons = document.getElementsByClassName('negative ui button');
+const filterButtons = document.querySelectorAll('.tabs .button');
+const filterButtonAll = document.querySelector('.tabs .button[data-type="all"]');
+const filterButtonNotdone = document.querySelector('.tabs .button[data-type="notdone"]');
+const filterButtonDone = document.querySelector('.tabs .button[data-type="done"]');
+
+
+
+filterButtonAll.addEventListener('click', e => handleFilterClick(e, 'all'));
+filterButtonNotdone.addEventListener('click',  e => handleFilterClick(e, 'notdone'));
+filterButtonDone.addEventListener('click',  e => handleFilterClick(e, 'done'));
+
+const handleFilterClick = (event, type) => {
+  const btn = document.querySelector(`.tabs .button[data-type="${type}"]`);
+  for (f of filterButtons) {
+    f.classList.remove('blue')
+  }
+  btn.classList.add('blue');
+
+  reRender();
+}
+
+const reRender = () => {
+  const activeFilterButton = document.querySelector('.tabs .button.blue');
+  const type = activeFilterButton.dataset.type;
+  let data = arr;
+  if (type === 'notdone') {
+    data = data.filter(i => !i.done);
+  } else if (type === 'done') {
+    data = data.filter(i => i.done);
+  }
+
+
+  todoList.replaceChildren('');
+  data.forEach(element => {
+    todoList.insertAdjacentHTML('afterbegin', getTodoHTML(element));
+  });
+
+  attachListeners();
+}
+
 
 const handleDeleteTodo = (event) => {
   const todoElement = event.target.closest('.todo');
+  const id = todoElement.dataset.id;
+  arr = arr.filter(i => i.id !== id);
+  setStorageData(arr);
   todoElement.remove();
-  // UPDATE LOCAL STORAGE!!!!
 }
 
-for (const deleteButton of deleteTodoButtons) {
-  deleteButton.addEventListener('click', handleDeleteTodo);
-};
+const handleToggle = (event) => {
+  event.preventDefault();
+  const todoElement = event.target.closest('.todo');
+  const id = todoElement.dataset.id;
+  const isActive = todoElement.classList.contains('todo--active');
+  const checkboxEl = todoElement.querySelector('input[type="checkbox"]');
+  arr = arr.map(i => {
+    if (i.id === id) {
+      i.done = !isActive
+    }
+    return i;
+  });
+  setStorageData(arr);
+  
+  if (isActive) {
+    todoElement.classList.remove('todo--active');
+    checkboxEl.checked = false;
+  } else {
+    todoElement.classList.add('todo--active');
+    checkboxEl.checked = true;
+  }
+
+  reRender();
+}
 
 const getStorageData = () => {
   const data = localStorage.getItem(STORAGE_KEY);
@@ -46,17 +108,15 @@ const setStorageData = (value) => {
   }
 };
 
-// IIFE. Initialize
-(()=>{
-  const data = getStorageData();
-  if(!data) {
-    setStorageData([]);
-  }
-})();
+
 
 const getTodoHTML = ({id, name, done}) => {
+  let className = 'todo';
+  if (done) {
+    className += ' todo--active'
+  }
   return `
-    <div class="todo" data-id="${id}">
+    <div class="${className}" data-id="${id}">
       <label class="checkbox">
         <input type="checkbox" ${done ? 'checked' : ''} />
         <div class="checkbox-icon"></div>
@@ -79,6 +139,8 @@ btn.addEventListener('click', () => {
   };
   // LocalStorage?
   arr.push(data);
+  setStorageData(arr);
+
   const newTodo =  getTodoHTML(data);
   todoList.insertAdjacentHTML('afterbegin', newTodo);
 
@@ -91,4 +153,45 @@ btn.addEventListener('click', () => {
   // Edit button?
 
   input.value = '';
+
+  handleFilterClick(null, 'all')
 });
+
+
+const getItemsFromStorage = () => {
+  const data = localStorage.getItem(STORAGE_KEY)
+  return JSON.parse(data);
+}
+
+const attachListeners = () => {
+  const deleteTodoButtons = document.getElementsByClassName('negative ui button');
+
+  for (const deleteButton of deleteTodoButtons) {
+    deleteButton.addEventListener('click', handleDeleteTodo);
+  };
+
+  const checkboxes = document.querySelectorAll('.todo .checkbox, .todo .text');
+  for (const checkbox of checkboxes) {
+    checkbox.addEventListener('click', handleToggle);
+  };
+}
+
+
+
+// IIFE. Initialize
+(()=>{
+  const data = getStorageData();
+  arr = data;
+
+  arr.forEach(todo => {
+    const newTodo = getTodoHTML(todo)
+    todoList.insertAdjacentHTML('afterbegin', newTodo);
+  })
+  if(!data) {
+    setStorageData([]);
+  }
+
+
+  attachListeners();
+
+})();

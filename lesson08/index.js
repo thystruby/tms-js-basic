@@ -151,3 +151,22 @@ opn.addEventListener("click",function() {
   
 }
 )
+
+
+
+let promise = new Promise((resolve, reject) => {
+  setTimeout(() => reject(new Error("Fail!")), 4000);
+});
+
+
+
+const arrowAsunc = async () => {
+  console.log('Before');
+  const promiseData = await new Promise((res) => {
+    setTimeout(() => {
+      res({});
+    },2500);
+  })
+  console.log('After');
+};
+arrowAsunc();
