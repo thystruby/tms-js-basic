@@ -24,6 +24,15 @@
  * 3) Вставляем новый элемент в качестве ПОСЛЕДНЕГО элемента внутрь body, не забываем добавить значение полученное из prompt внутрь этого элемента
 */
 
+const bnt  = document.querySelector("button");
+const ppp  = document.querySelector("p");
+
+bnt.addEventListener("click",function() {
+  let p = prompt ('name');
+  body.insertAdjacentHTML('beforeend', `<p> ваше имя ${p}</p>`);
+}
+)
+
 
 /**
  * Задание 4. Заполните таблицу с классом my-table данными из объекта data. Таблицу уже есть в файле index.html
@@ -54,6 +63,24 @@ const data = [
   }
 ];
 
+
+const tableBody = document.querySelector('tbody');
+
+const getrow = (data) => {
+  const {name,age,salery} = data;
+  return
+  <tr>
+    <td>${name}</td>
+    <td>${age}</td>
+    <td>${salery}</td>
+  </tr>
+}
+
+for (let i = 0 ; i < data.length; i++) {
+  tableBody.insertAdjacentHTML('beforeend',getRow(data[i]))
+    
+  }
+
 /**
  * Задание 5. Написать функцию, которая будет доставать все данные из таблицы
  * На вход в эту функцию мы должны передавать DOM элемент таблицы.
@@ -66,4 +93,83 @@ const data = [
     ['Adam', '18', '65200'],
   ];
 */
+
+
+const table = document.querySelector('table');
+
+parseTble(table);
+
+function parseTble(tableElement) {
+   
+  const tableRows =tableElement.rows;
+  for (const row of tableRows) {
+    console.log(row.cells);  
+     
+  }
+};
+
+
+const btn =document.querySelector("button");
+const body =document.body;
+
+
+
+
+
+
+  btn.onclck = function() {
+    body.style = `
+    background: red;
+    `;
+  }
+
+
+const bnt  = document.querySelector("button");
+const ppp  = document.querySelector("p");
+
+bnt.addEventListener("click",function() {
+  let p = prompt ('name');
+  body.insertAdjacentHTML('beforeend', `<p> ваше имя ${p}</p>`);
+}
+)
+
+
+const opn = document.querySelector("button");
+const opе = document.querySelector("ul");
+
+
+
+
+
+
+opn.addEventListener("click",function() {
+ if(ul.style.display === 'none') {
+   ul.style.display = 'block'
+ } else {
+  ul.style.display = 'none'
+ }
+  
+}
+)
+
+
+
+let promise = new Promise((resolve, reject) => {
+  setTimeout(() => reject(new Error("Fail!")), 4000);
+});
+
+
+
+/*const arrowAsunc = async () => {
+  console.log('Before');
+  const promiseData = await new Promise((res) => {
+    setTimeout(() => {
+      res({});
+    },2500);
+  })
+  console.log('After');
+};
+arrowAsunc();*/
+
+
 

@@ -17,3 +17,35 @@ const initializeForecast = () => {
   forecastPlace.insertAdjacentHTML('afterbegin', forecastContainer); // Собственно метод "вставки"
 }
  */
+
+import WeatherApiService from './api-service.js';
+
+const searchButton = document.querySelector('.search-button');
+
+function getCurrentDate() {
+  const todayDate = document.querySelector(".date")
+  const date =new Date(Date.now());
+
+  const day = date.getDate();
+  const month = (date.getMonth() + 1).toString().padStart(2,"0");
+  const year = date.getFullYear();
+
+
+  todayDate.innerHTML = `Today ${day}.${month}.${year}`
+}
+getCurrentDate();
+
+
+searchButton.addEventListener('click', async () => {
+  try {
+    const mainData = await WeatherApiService.getWeatherInfoByName('Minsk');
+    const forecastData = await WeatherApiService.getWeatherForecast('Minsk');
+    console.log(mainData);
+    console.log(forecastData);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+
+
