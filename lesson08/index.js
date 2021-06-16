@@ -160,7 +160,7 @@ let promise = new Promise((resolve, reject) => {
 
 
 
-const arrowAsunc = async () => {
+/*const arrowAsunc = async () => {
   console.log('Before');
   const promiseData = await new Promise((res) => {
     setTimeout(() => {
@@ -169,4 +169,7 @@ const arrowAsunc = async () => {
   })
   console.log('After');
 };
-arrowAsunc();
+arrowAsunc();*/
+
+
+

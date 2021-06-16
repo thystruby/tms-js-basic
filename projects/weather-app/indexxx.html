@@ -20,12 +20,12 @@
     Today: 11.05.2021
   </h1>
   <!-- ЗАДАНИЕ НА КОМПОНЕНТЫ: Этот компонент должен отображаться сразу при загрузке страницы -->
-  <div class="search-container" data-component>
+  <div class="container" data-component>
     <div class="input-container">
       <!-- Когда происходит запрос к API необходимо добавлять аттрибут disabled к input и button что бы предотвратить другие запросы -->
       <!-- После того, как запрос пройдет, атрибуты disabled необходимо удалить -->
       <input class="input" placeholder="Enter city or country name" type="text" />
-      <button class="button search-button">Search</button>
+      <button class="button">Search</button>
       <!-- ДОПОЛНИТЕЛЬНОЕ ЗАДАНИЕ: Реализовать поиск по геолокации. -->
       <!-- Для получения информации о геолокации необходимо по клику на кнопку вызвать метод navigator.geolocation.getCurrentPosition((value) => {}) -->
       <!-- В качестве первого аргумента этот метод принимает функцию succces, второй параметр это функция error -->

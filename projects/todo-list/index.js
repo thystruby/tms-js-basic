@@ -42,6 +42,8 @@ const handleFilterClick = (event, type) => {
   reRender();
 }
 
+
+
 const reRender = () => {
   const activeFilterButton = document.querySelector('.tabs .button.blue');
   const type = activeFilterButton.dataset.type;
@@ -195,3 +197,63 @@ const attachListeners = () => {
   attachListeners();
 
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+// const f = (callback) => {
+//   const asd = 777;
+//   callback(asd);
+//   return 777;
+// };
+// const f2 = (value) => console.log('f2 callback', value + 100);
+
+// setTimeout(()=> {return f(f2)}, (1000));
+
+// const deffered = new Promise((resolve, reject) => {
+//   setTimeout(()=> {
+//     resolve(f(f2))}, (1000)
+//   );
+//   reject('asd')
+//   // throw new Error('asd');
+// })
+
+// deffered
+//   .then(value => {
+//     console.log('promise result:', value);
+//   })
+//   .catch(err => {
+//     console.log('promise err', err)
+//   })
+//   .finally(() => {
+//     console.log('always ')
+//   });
+
+
+//   const a = async () => {
+//     try {
+//       const value = await deffered;
+//       console.log('async', value);
+//       return value + 100;
+//     } catch (e) {
+//       return 0;
+//     }
+
+//   }
+
+// const b = async () => {
+//   const value = await a();
+//   console.log('async2', value);
+// }
+
+// b();
+
+
