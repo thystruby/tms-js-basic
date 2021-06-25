@@ -13,6 +13,15 @@
  * Выведите через запятую "типы" этих переменных в консоль
 */
 
+/*
+let number = 15;
+let str = "fjgh";
+let myCommit = true;
+let a = null;
+let b;
+console.log( number, str, myCommit, a, b);
+*/
+
 
 /**
  * Задание 2.
@@ -23,6 +32,12 @@
  * P.S. Надо использовать шаблонные строки ("обратные" ковычки)
 */
 
+/*
+let userName = "John";
+const admin = userName;
+alert(`Активный администратор: ${admin}`);
+*/
+
 
 /** 
  * Задание 3.
@@ -31,9 +46,17 @@
  * Выводите в alert строку типа "[константа] [значение, введенное в prompt]"
 */
 
+/*
+const hello = "Привет";
+let userName = prompt("Ваше имя?");
+alert(`${hello}, ${userName}`); 
+*/
+
 
 /**
  * Задание 4.
  * Выведите confirm с текстом "Получить доступ?"
  * Выведите в alert значение, полученное из confirm 
 */
+let myPass = confirm("Получить доступ");
+alert(myPass);
