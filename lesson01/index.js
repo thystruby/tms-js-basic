@@ -14,6 +14,17 @@
 */
 
 
+
+// const n = 5;
+// const str = 'Hello';
+// const b = true;
+// const nu = null;
+// const d = undefined;
+
+// console.log(`${typeof(n)}, ${typeof(str)}, ${typeof(b)}, ${typeof(nu)}, ${typeof(d)}`);
+
+
+
 /**
  * Задание 2.
  * Объявите 2 переменные: admin и name
@@ -23,6 +34,13 @@
  * P.S. Надо использовать шаблонные строки ("обратные" ковычки)
 */
 
+// const admin;
+// const name = 'John';
+// admin = name;
+
+// alert(`Активный администратор: ${admin}`);
+
+
 
 /** 
  * Задание 3.
@@ -31,9 +49,17 @@
  * Выводите в alert строку типа "[константа] [значение, введенное в prompt]"
 */
 
+// const hi = 'Привет';
+// const UserName = prompt('Имя пользователя:');
+
+// alert( `${hi}: ${UserName}`)
+
 
 /**
  * Задание 4.
  * Выведите confirm с текстом "Получить доступ?"
  * Выведите в alert значение, полученное из confirm 
 */
+
+// const decision = confirm ('Получить доступ?');
+// alert(decision);

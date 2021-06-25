@@ -12,6 +12,22 @@
  * Преобразуйте эти переменные в boolean, string, number с помощью явного преобразования (прим: Boolean()) и выведите значение в консоль.
 */
 
+// const S = 'some string';
+// const N = 1;
+// const B = true;
+// const Nu = null;
+
+// const convertS = Number(S);
+// const convertN = String(N);
+// const convertB = Object(B) ;
+// const convertNu = Boolean(Nu);
+
+// console.log(typeof convertS);
+// console.log(typeof convertN);
+// console.log(typeof convertB);
+// console.log(typeof convertNu);
+
+
 
 /**
  * Задание 2
@@ -25,12 +41,32 @@
   * Вывести все результаты через запятую в console.log
 */
 
+// const a1;
+// const a2;
+// const a3;
+// const a4;
+// const a5;
+
+// a1 = (5 + 3) * (5 - 3);
+// a2 = (10 - 6) * 200;
+// a3 = 534 * 132 / 18;
+// a4 = 123 * 3 + 10;
+// a5 = 12*13*14;
+
+// console.log(`${a1}, ${a2}, ${a3}, ${a4}, ${a5}`);
+
 
 /**
  * Задание 3
  * Напишите скрипт, который находит площадь прямоугольника c высота 43см и шириной 27см
  * Значение площади должно хранится в переменной s
 */
+
+// const width = 27;
+// const height = 43;
+// let s = width * height;
+// console.log(s);
+
 
 
 /** Задание 4
@@ -39,7 +75,13 @@
 */
 
 
- /**
+// const n = 3;
+// const m = 4;
+// const k = Math.sqrt(n**2 + m**2);
+// console.log(k);
+
+
+/**
  * Задание 5
  * Переделайте этот код так, чтобы в нем использовались операции ++ и --.
  * Количество строк кода при этом не должно измениться.
@@ -50,6 +92,11 @@
  * alert(num);
 */
 
+// let num = 10;
+// ++ num;
+// num ++;
+// -- num;
+// alert(num);
 
 /** 
  * Задание 6
@@ -60,18 +107,54 @@
  * Если в какой-либо из переменных будет введено не число (т.е. строка) ИЛИ ничего не будет введено (пользователь закроет окно ввода), то надо вывести в alert текст "Произошла ошибка". 
 */
 
+// const first = prompt('Введите первое число:');
+// const second = prompt('Введите второе число:');
+// const checkNaN = Number.isNaN(Number(first)) || Number.isNaN(Number(second));
+// const checkNull = first === null || second === null;
+// console.log(first);
+// console.log(second);
+// console.log(checkNull);
+// if (checkNaN === true || checkNull === true) {
+//   alert('Произошла ошибка');
+// }
+// else if (first === second) {
+//   alert(`Числа равны: ${first}`);
+// }
+// else {
+//   alert(`Наибольшее: ${Math.max(first, second)}`);
+// }
+
+
+
 
 /**
  * Задание 7
  * Вызовите окно confirm с текстом "Хотите получить доступ?"
- * Если confirm будет true, то запросите у пользователя его возраст (prompt) и идите к следующему пункту, иначе ничего не делайте. 
+ * Если confirm будет true, то запросите у пользователя его возраст (prompt) и идите к следующему пункту, иначе ничего не делайте.
  * Если возраст больше или равен 18 лет, то выведите в alert текст "Доступ разрешен"
  * В противном случае выведите текст "Доступ запрещен"
  * Используйте "тернарный оператор" (? :)
 */
 
 
+
+// const access = confirm('Хотите получить доступ?');
+// if(access) {
+//   const age = prompt('Введите возраст');
+//     age >= 18 ? alert('Доступ разрешен') : alert('Доступ запрещен')
+// }
+
+
+
 /**
  * Задание 8
  * Запросить у пользователя 2 значения. Найти остаток от деления 2-х чисел, вывести в alert. Надо так же сделать проверку на то, является ли введенное значение числом.
 */
+
+// const first = prompt('Введите первое число:');
+// const second = prompt('Введите второе число:');
+// const checkNaN = Number.isNaN(Number(first)) ||  Number.isNaN(Number(second))  ;
+// const checkNull = first === null || second === null;
+// if(checkNaN === false && checkNull === false){
+//   alert(`Остаток: ${first % second}`);
+// }
