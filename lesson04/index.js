@@ -10,7 +10,23 @@
  * Задание 1
  * Создайте объект user типа {name: 'John', surname: 'Doe'}
  * Добавьте метод getFullName который должен вызывать alert со строкой "Полное имя: [name] [surname]"
+ * 
+ * 
+ * 
 */
+
+let user = {
+  name: 'John',
+  surname: 'Doe'
+ };
+
+ user.getFullName = function() {
+   alert("Полное имя " + user['name'] + '' + user['surname']);
+ }
+
+ user.getFullName();
+
+
 
 
 /**
